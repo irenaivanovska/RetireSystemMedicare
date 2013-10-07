@@ -1,0 +1,36 @@
+
+#cssmenu_v {
+    background: none repeat scroll 0 0 #BFBFBF;
+    list-style: none outside none;
+    border: 1px solid #000000;
+    margin: 0;
+    padding: 0;
+    width: 119%;
+}
+#cssmenu_v li {
+    font: 100% 'Lucida Sans Unicode','Bitstream Vera Sans','Trebuchet Unicode MS','Lucida Grande',Verdana,Helvetica,sans-serif;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#cssmenu_v ul, li{
+    margin: 0;
+}
+#cssmenu_v li .last{
+    border:none;
+}
+#cssmenu_v a {
+    background: none repeat scroll 0 0 #BFBFBF;
+    border-bottom: 1px solid #393939;
+    color: #252525;
+    display: block;
+    font-weight: normal;
+    margin: 0;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+#cssmenu_v a:hover {
+    background: url("../img/hover.gif") no-repeat scroll left center #1292D3;
+    color: #FFFFFF;
+    padding-bottom: 8px;
+}

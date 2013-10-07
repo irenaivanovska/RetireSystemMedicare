@@ -1,0 +1,188 @@
+@import url("http://fonts.googleapis.com/css?family=Capriola");
+
+#cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a {
+    font-family: 'Capriola',sans-serif;
+    line-height: 1;
+    margin: 0px;
+    padding: 0px;
+}
+
+#cssmenu:before, #cssmenu:after, #cssmenu > ul:before, #cssmenu > ul:after {
+    content: "";
+    display: table;
+}
+
+#cssmenu:after, #cssmenu > ul:after {
+    clear: both;
+}
+
+#cssmenu {
+    background: none repeat scroll 0% 0% #1292D3;
+    border-radius: 2px 2px 2px 2px;
+    height: 50px;
+    width: auto;
+}
+
+#cssmenu ul {
+    background: transparent;
+    height: 50px;
+    margin: 0px 15%;
+}
+
+#cssmenu ul li {
+    border-right: 1px solid #2F4F4F;
+    float: left;
+    list-style: none outside none;
+}
+.button{
+    background: #e8c418; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e8c418 0%, #f29b1a 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8c418), color-stop(100%,#f29b1a)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #e8c418 0%,#f29b1a 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #e8c418 0%,#f29b1a 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #e8c418 0%,#f29b1a 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #e8c418 0%,#f29b1a 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8c418', endColorstr='#f29b1a',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #000000;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: -20px 0 20px 20px;
+    padding: 5px;
+    position: relative;
+    z-index: 10000;
+}
+#opener{
+    background: #e8c418; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e8c418 0%, #f29b1a 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8c418), color-stop(100%,#f29b1a)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #e8c418 0%,#f29b1a 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #e8c418 0%,#f29b1a 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #e8c418 0%,#f29b1a 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #e8c418 0%,#f29b1a 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8c418', endColorstr='#f29b1a',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #000000;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: -20px 0 20px 20px;
+    padding: 5px;
+    position: relative;
+    z-index: 10000;
+}
+.header_number {
+    color: #0C92D1;
+    font-size: 200%;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: -80px;
+    position: relative;
+    text-align: right;
+    width: 85%;
+    z-index: 1;
+}
+
+#cssmenu ul li a {
+    border-radius: 2px 2px 0px 0px;
+    color: white;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 4px 2px 0px;
+    opacity: 0.9;
+    padding: 15px 30px;
+    text-decoration: none;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+#cssmenu ul li:first-child a {
+    margin: 4px 2px 0px 0px;
+}
+
+#cssmenu ul li a:hover, #cssmenu ul li.active a {
+    background: transparent;
+    color: #004F7C;
+    display: block;
+    margin-top: 0px;
+    opacity: 1;
+    padding-bottom: 17px;
+    padding-top: 17px;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.55);
+}
+
+#quote
+{
+    float: right;
+    display: block;
+    width: 30%;
+    height: auto;
+    color:white;
+    background: #1292D3;
+    border-radius: 10px;
+    padding:10px;
+    text-align: center;
+    border:1px solid #496475 ;
+}
+#quoteFAQ
+{
+    float: left;
+    display: block;
+    width: 95%;
+    height: auto;
+    color:white;
+    background: #1292D3;
+    border-radius: 10px;
+    padding:10px;
+    margin: 10px 0 0 0;
+    text-align: center;
+    border:1px solid #496475 ;
+}
+#quoteFAQ h2 {
+    background: transparent;
+    text-shadow: 2px 2px 2px gray;
+    color: #ffffff;
+}
+#quote h2
+ {
+     background: transparent;
+     text-shadow: 2px 2px 2px gray;
+     font-size:120%;
+     color: #ffffff;
+     line-height: 1;
+ }
+#quote p
+{
+    text-shadow: 2px 2px 2px gray;
+    font-size:60%;
+}
+#headline .headline_text
+{
+    text-align: right;
+    vertical-align: text-bottom;
+    float: right;
+    width: 100%;
+    font-size:120%;
+}
+.box
+{
+    width: 30%;
+    height: auto;
+    border: 1px solid gray;
+    border-radius: 5px;
+    float: left;
+    margin: 0 8% 0 8%;
+    color: #000;
+}
+.box p {
+    padding: 15px;
+}
+.headline_box{
+    background: #1292D3;
+    color: white;
+    height: 20px;
+    width: auto;
+    border-radius: 5px 5px 0 0;
+    font-size: 120%;
+    font-weight: bold;
+    padding: 5px;
+}
