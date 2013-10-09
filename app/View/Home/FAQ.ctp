@@ -1,7 +1,7 @@
 <div id="quoteFAQ" class="get_quoteFAQ">
     <h2>Get a Quote for Medicare & Supplements</h2>
     <?php
-    echo $this->Form->create('ZipFind1', array('action'=> 'view' ));?>
+    echo $this->Form->create('ZipFinds', array('action'=> 'view' ));?>
     <br/>
     <?php echo $this->Form->input('query', array('type'=>'text', 'label'=>'Zip Code'));
     echo $this->Form->end('Find Plans');?>

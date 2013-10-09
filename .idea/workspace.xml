@@ -68,6 +68,7 @@
         <option value="$PROJECT_DIR$/app/View/Home/FAQ.ctp" />
         <option value="$PROJECT_DIR$/app/webroot/css/cake.generic.css" />
         <option value="$PROJECT_DIR$/app/Model/ZipFind.php" />
+        <option value="$PROJECT_DIR$/app/Model/DrugListByPlans.php" />
         <option value="$PROJECT_DIR$/app/Controller/ZipFindsController.php" />
       </list>
     </option>
