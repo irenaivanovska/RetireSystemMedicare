@@ -1,9 +1,9 @@
 <table>
     <tr>
-        <th> Country name</th>
+        <th>Country name</th>
     </tr>
     <?php
-    echo $this->Form->create('DrugListByPlans', array('action'=>'enterdrugs'));
+    echo $this->Form->create('Drug', array('action'=>'enterDrugs'));
     echo $this->Form->hidden('zip_code', array('value' => $this->request->data['ZipFind']['query']));
 
     foreach ($zipFinds as $zipFind): ?>
@@ -16,7 +16,7 @@
                 'value' => $zipFind['ZipFind']['county_name'],
             );
 
-            echo $this->Form->radio('by_county_name', $options, array('multiple' => true))?>
+            echo $this->Form->radio('county_name', $options, array('multiple' => true))?>
           </td>
     </tr>
     <?php endforeach;?>
