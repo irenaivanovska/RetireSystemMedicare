@@ -1,5 +1,5 @@
 <?php
-	echo $this->Form->create('Drug', array('action', 'showDrugsByCountyAndZip'));
+	echo $this->Form->create('Drug', array('action' => 'showDrugsByCountyAndZip'));
 		echo $this->Form->hidden('zip_code', array('value' => $this->request->data['Drug']['zip_code']));
     	echo $this->Form->hidden('county_name', array('value' => $this->request->data['Drug']['county_name']));
     	

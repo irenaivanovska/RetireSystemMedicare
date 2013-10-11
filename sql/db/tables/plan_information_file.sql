@@ -1,0 +1,23 @@
+CREATE TABLE `plan_information_file` (
+  `plan_information_file_id` int(4) NOT NULL AUTO_INCREMENT,
+  `contract_id` char(5) NOT NULL,
+  `plan_id` char(3) NOT NULL,
+  `segment_id` char(3) NOT NULL,
+  `contract_name` char(50) NOT NULL,
+  `plan_name` char(60) NOT NULL,
+  `formulary_id` char(8) NOT NULL,
+  `premium` float NOT NULL,
+  `deductable` float NOT NULL,
+  `icl` float NOT NULL,
+  `ma_region_code` char(2) NOT NULL,
+  `pdp_region_code` char(2) NOT NULL,
+  `state` char(2) NOT NULL,
+  `country_code` char(5) NOT NULL,
+  `snp` char(1) NOT NULL,
+  `plan_suppressed_yn` char(1) NOT NULL,
+  PRIMARY KEY (`plan_information_file_id`),
+  KEY `contract_id` (`contract_id`),
+  KEY `plan_id` (`plan_id`),
+  KEY `segment_id` (`segment_id`),
+  KEY `formulary_id` (`formulary_id`)
+) ENGINE=InnoDB;
