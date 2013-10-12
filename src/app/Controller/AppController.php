@@ -1,46 +1,90 @@
 <?php
-/**
- * Application level Controller
- *
- * This file is application-wide controller file. You can put all
- * application-wide controller-related methods here.
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.Controller
- * @since         CakePHP(tm) v 0.2.9
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
+
 App::uses('Controller', 'Controller');
 
-/**
- * Application Controller
- *
- * Add your application-wide methods in the class below, your controllers
- * will inherit them.
- *
- * @package		app.Controller
- * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
- */
 class AppController extends Controller {
-   /* public $components = array(
-        'Session',
-        'Auth' => array(
-            'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
-            'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home')
-        )
-    );
+		
+	public function beforeRender() { }
 
-    public function beforeFilter() {
-        $this->Auth->allow('index', 'view');
-    }*/
+
+	public $components = array(
+		'Session',
+		'Auth' => array(
+			//'loginAction' => array('controller' => 'users', 'users' => 'login'),
+			'loginRedirect' => array('controller' => 'home', 'action' => 'index'),
+			'logoutRedirect' => array('controller' => 'home', 'action' => 'index'),
+			'authError' => 'We are sorry but you do not have permission to view the page you are requesting.',
+			'authorize' => array('Controller'), 
+			'userModel' => array('Users'),
+			'autoRedirect' => array('false')
+		));
+		
+
+	public function beforeFilter() {
+		$this->helpers[] = 'Box';
+
+		//$this->loadModel('FaqCat');
+		//$newsUpdates=$this->FaqCat->getUpdates();
+		//$this->set('FaqUpdates',$newsUpdates);
+		
+			
+		$this->set('logged_in', $this->Auth->loggedIn());
+		$this->set('userid',$this->Auth->user('user_id'));
+		$this->set('role',$this->Auth->user('role'));
+		
+		$currUser=$this->Auth->user();
+		$this->set('current_user',$currUser);
+
+		$user_name=$currUser['user_firstname'].' '.$currUser['user_lastname'];
+		$this->set('user_name',$user_name);
+		
+		// add ones below that everyone can do.. 
+		   
+		$this->Auth->allow('index','view','register','login','logout','home',
+						   'about','privacy','forgot_pass','contact','two_col','full'
+						   );
+	} 
+	
+	public function isAuthorized($user) {
+
+		$this->loadModel('Arl'); // make this call here to avoid child controllers from overriding the model needed here
+		
+    	if (isset($user['role']) && $user['role'] === 'admin') {
+        		
+        		return true; //Admin can access every action
+        	  
+   		} elseif (isset($user['role']) && $user['role'] === 'member') {
+		
+    		$url = $this->Auth->request->params['action']; 
+			$testMember = $this->Session->read('cachedMemberActions');
+				 
+			if (!empty($testMember)) {
+				$memberActions = $this->Session->read('cachedMemberActions');
+			} else {
+				$memberActions = $this->Arl->getMemberActions();  
+				$this->Session->write('cachedMemberActions', $memberActions); 	
+			} 
+			  $val = $this->page_test($url, $memberActions); // call the method to test permissions 		
+		
+			if ($val) { return true; } else { return false; } 
+			
+	    } 
+	
+    	return false; //they are not allowed to see the page requested 
+    }
+	
+	
+	public function clean($val = null) {
+		if(is_array($val)) { 
+			foreach($val as $k=>$v) { $newVal[$k]=$this->clean($v); } 
+		} else {
+			$newVal = trim(strip_tags($val));
+		}
+		return $newVal;
+	}
+	
+
+    
 }
+
+?>

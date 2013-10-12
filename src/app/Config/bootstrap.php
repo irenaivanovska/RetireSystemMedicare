@@ -26,12 +26,11 @@
 
 // Setup a 'default' cache configuration for use in the application.
 Cache::config('default', array('engine' => 'File'));
-CakePlugin::load('DebugKit');
-CakePlugin::load('Composer', array('bootstrap' => true));
+
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
  *
-  App::build(array(
+ * App::build(array(
  *     'Model'                     => array('/path/to/models/', '/next/path/to/models/'),
  *     'Model/Behavior'            => array('/path/to/behaviors/', '/next/path/to/behaviors/'),
  *     'Model/Datasource'          => array('/path/to/datasources/', '/next/path/to/datasources/'),
@@ -99,12 +98,27 @@ Configure::write('Dispatcher.filters', array(
  */
 App::uses('CakeLog', 'Log');
 CakeLog::config('debug', array(
-	'engine' => 'File',
+	'engine' => 'FileLog',
 	'types' => array('notice', 'info', 'debug'),
 	'file' => 'debug',
 ));
 CakeLog::config('error', array(
-	'engine' => 'File',
+	'engine' => 'FileLog',
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+
+
+// Load composer autoload.
+require APP . '/Vendor/autoload.php';
+
+// Remove and re-prepend CakePHP's autoloader as composer thinks it is the most important.
+// See https://github.com/composer/composer/commit/c80cb76b9b5082ecc3e5b53b1050f76bb27b127b
+spl_autoload_unregister(array('App', 'load'));
+spl_autoload_register(array('App', 'load'), true, true);
+
+
+// Load the Composer Plugin
+CakePlugin::load('Composer', array('bootstrap' => true));
+CakePlugin::load('DebugKit');

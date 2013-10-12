@@ -1,0 +1,204 @@
+/* CSS Document */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin:0;
+	padding:0;
+	color:#222;
+}
+
+.fs10 { font-size:10px !important; }
+.fs11 { font-size:11px !important; }
+.fs12 { font-size:12px !important; }
+.fs13 { font-size:13px !important; }
+.fs14 { font-size:14px !important; }
+.fs15 { font-size:15px !important; }
+.fs16 { font-size:16px !important; }
+.fs17 { font-size:17px !important; }
+.fs18 { font-size:18px !important; }
+
+.red { color:#CC0000 !important; }
+.green { color:#33CC00 !important; }
+
+.clear { clear:both; }
+
+h1, h2, h3 { color:#EF9E17; margin:0px; margin-bottom:5px;  /* #1292d3*/}
+
+a { text-decoration:none; color:#1292D3; }
+
+#wrapper { }
+
+#top { 
+	background-color:#FFFFFF;
+	margin-bottom:30px;
+}
+
+#header { 
+	width:960px; 
+	margin:0 auto;
+	padding:20px 0px;
+}
+
+#header td { vertical-align:top; text-align:right; width:33%; }
+
+#header h1, #header .h1{ 
+	margin:0;
+	font-weight:normal;
+	color:#1292d3;
+	font-size:30px;
+}
+
+#header .sub-title { font-size:16px; color:#555;  }
+
+.loginButton{ margin-top:5px;}
+.loginButton a{ 
+	padding:5px 9px; 
+	color:#FFFFFF; 
+	background-color:#F09E16;
+	border:1px solid #666;
+	border-radius:4px;
+	font-weight:bold;
+}
+
+#myAccount { }
+
+#myAccount ul { margin:0; padding:0; list-style:none; }
+#myAccount ul li { margin:0; padding:0; }
+
+#navbar { 
+	background-color:#1292d3;
+}
+
+#navbar #navlinks { 
+	width:960px; 
+	margin:0 auto;
+}
+
+
+#navbar ul { margin:0; padding:0; list-style:none; width:960px; }
+#navbar ul li {
+	display: block;
+	float:left;
+	text-align:center;
+	border-left: 1px solid #0F76A8;
+	color:#0F76A8;
+}
+
+#navbar ul li.fli { border:0; }
+
+#navbar ul li a { 
+	display: block; 
+	padding:10px 20px;
+	color:#fff;
+	text-decoration:none;
+	font-size:20px;
+	text-shadow:2px 2px 3px #0F76A8;
+	width:198px;
+}
+
+#navbar ul li a:hover { text-decoration:none; }
+
+#full_container { }
+
+#container { 
+	width:960px; 
+	border:1px solid #666;
+	box-shadow:2px 2px 9px #999;
+	border-radius:10px;
+	background-color:#FFFFFF;
+	margin:0 auto;
+	margin-bottom:20px;
+}
+
+#container .two_col { }
+#container .two_col td.col_1, #container .two_col td.col_2 { 
+	vertical-align:top; 
+	/*text-align:left;*/
+}
+
+#container .two_col td.col_1 {
+	width:200px;
+	border-right:1px solid #999;
+	background-color:#bfbfbf;
+	border-radius:9px 0 0 0;
+}
+
+#topLeft { 
+	background-color:#414042; 
+	padding:15px;
+	border-radius:9px 0 0 0;
+	color:#FFFFFF;
+}
+
+#topLeft h3{
+	color:#ef9e17;
+	margin:0;
+}
+
+#leftbar > div {
+	padding:15px;
+	/*border-radius:9px 0 0 0;*/
+}
+
+#leftbar ul.fCats { margin:0; padding:0; list-style:none;}
+#leftbar ul.fCats li { margin:0; padding:0; border-bottom:1px solid #666; }
+
+#leftbar ul.fCats li.active a { font-weight:bold;}
+
+#leftbar ul.fCats li a { display:block; padding:12px 10px; color:#222222; }
+#leftbar ul.fCats li a:hover { font-weight:bold; }
+
+#leftbar .faq_search { }
+
+
+#faq { }
+
+#faq .eQues { padding:8px 0px; border-bottom:1px solid #ccc; }
+
+#faq .eQues .edit { float:right; }
+
+#faq .eQues .fQues{ font-size:16px; }
+#faq .eQues .fQues a { text-decoration:none;}
+#faq .eQues .fAns { display:none; padding:5px; padding-bottom:0px;  }
+
+#faq #search_result .eQues .fAns { display:block; }
+#faq #search_result .hl{ background-color:#FFFF99; /*font-weight:bold;*/ }
+
+
+
+#content { 
+	padding:20px;
+	min-height:250px;
+}
+
+#flashMessage { color:#33CC00; font-weight:bold; font-size:16px; padding-bottom:10px; }
+
+
+.dataTable { }
+.dataTable th { text-align:left; padding:3px; border-bottom:1px solid #aaa; }
+.dataTable td { text-align:left; vertical-align:top; padding:3px; border-bottom:1px solid #ccc; }
+
+
+.formDiv {}
+.formDiv .formTable {}
+.formDiv .formTable td { padding:3px; text-align:right; }
+.formDiv .formTable td + td { text-align:left; }
+
+textarea { font-family:Arial, Helvetica, sans-serif; font-size:13px; }
+
+#footer {
+	padding:20px;
+	background-color:#1292d3;
+	border-radius:0px 0px 9px 9px;
+	/* border:1px solid #118BC6; */
+	box-shadow: inset 0 0 5px 5px #118BC6;
+}
+
+#full_container #footer { border-radius:0; }
+
+#footer table { width:800px; margin:0 auto; }
+
+#footer td { vertical-align:top; text-align:left; width:25%; }
+
+#footer a { color:#FFFFFF; }
