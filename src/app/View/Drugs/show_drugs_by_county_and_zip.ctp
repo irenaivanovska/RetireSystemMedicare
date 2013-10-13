@@ -1,26 +1,23 @@
 <?php
 echo '<table>';
 	echo '<tr>';
-		echo '<th>PlanID</th>';
-		echo '<th>Contract</th>';
-		echo '<th>Contract Year</th>';
-		echo '<th>Level</th>';
-		echo '<th>Name</th>';
-		echo '<th>Type</th>';
-		echo '<th>Share preferences</th>';
+		echo '<th>ID</th>';
+		echo '<th>Drug name</th>';
+		echo '<th>Dose</th>';
+		echo '<th>Frequency</th>';
+		echo '<th>&nbsp;</th>';
 	echo '</tr>';
 	foreach($drugs_list as $item) {
-		$data =& $item['DrugModel'];
+		$data =& $item['Drugs'];
+		$drug_id = $data['drug_id'];
 		echo '<tr>';
-			echo '<td>' . $data['plan_id'] . '</td>';
-			echo '<td>' . $data['contract_id'] . '</td>';
-			echo '<td>' . $data['contract_year'] . '</td>';
-			echo '<td>' . $data['tier_level'] . '</td>';
-			echo '<td>' . $data['tier_label'] . '</td>';
-			echo '<td>' . $data['tier_type_desc'] . '</td>';
-			echo '<td>' . $data['cost_share_pref'] . '</td>';
+			echo '<td>' . $drug_id . '</td>';
+			echo '<td>' . $data['drug_name'] . '</td>';
+			echo '<td>' . $data['dose'] . '</td>';
+			echo '<td>' . $data['frequency'] . '</td>';
+			echo '<td><a href="action=showdetail&drug_id=' . $drug_id . '">More...</a></td>';
 		echo '</tr>';
 	} 
 echo '</table>'; 
-//echo $this->Paginator->numbers(array('model' => 'DrugModel')); 
+echo $this->Paginator->numbers(array('model' => 'DrugModel')); 
 ?>

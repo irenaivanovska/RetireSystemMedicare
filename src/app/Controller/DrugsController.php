@@ -1,7 +1,7 @@
 <?php
 class DrugsController extends AppController {
   public $name = 'Drugs';
-  public $useTable = 'vwplandrugtiercost';
+  public $useTable = 'drugs';
   public $helpers = array('Html','Form');
   
   public $components = array('Paginator');
@@ -10,13 +10,13 @@ class DrugsController extends AppController {
       //'fields' => array('Post.id', 'Post.created'),
       'limit' => 15,
       'order' => array(
-          'DrugModel.tier_label' => 'asc'
+          'Drugs.drug_name' => 'asc'
       )
   );
   
   public function __construct($request = null, $response = null) {
     parent::__construct($request, $response);
-    $this->loadModel('DrugModel');
+    $this->loadModel('Drugs');
   }
   
   public function enterDrugs() {
@@ -46,11 +46,12 @@ class DrugsController extends AppController {
         'pageCount' => $limit
     );
     
-    $this->DrugModel->recursive = 0;
-    $drugs_list = $this->DrugModel->find('all', array(
-        'fields' => array('DrugModel.plan_id', 'DrugModel.contract_id', 'DrugModel.contract_year', 'DrugModel.tier_level', 'DrugModel.tier_label', 'DrugModel.tier_type_desc', 'DrugModel.cost_share_pref'),
-        'conditions' => array('DrugModel.tier_label LIKE' => '%' . $filter_by_drug_name . '%'),
+    $this->Drugs->recursive = 0;
+    $drugs_list = $this->Drugs->find('all', array(
+        'fields' => array('Drugs.drug_id', 'Drugs.drug_name', 'Drugs.dose', 'Drugs.frequency'),
+        'conditions' => array('Drugs.drug_name LIKE' => '%' . $filter_by_drug_name . '%'),
         'page' => $page,
+        'pageCount' => 15,
         'limit' => $limit
     ));
     

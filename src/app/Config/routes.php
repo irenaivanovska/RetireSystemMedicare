@@ -26,27 +26,28 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
-	Router::connect('/', array('controller' => 'pages', 'action' => 'home'));
-	
-	Router::connect('/faq/*', array('controller' => 'FaqCat', 'action' => 'view',0));
-	Router::connect('/question/*', array('controller' => 'faqEntry', 'action' => 'view',0));
- 
+Router::connect('/', array('controller' => 'pages', 'action' => 'home'));
+//Router::connect('/zip_finds/*', array('controller' => 'ZipFinds', 'action' => 'view'));
+
+Router::connect('/faq/*', array('controller' => 'FaqCat', 'action' => 'view',0));
+Router::connect('/question/*', array('controller' => 'faqEntry', 'action' => 'view',0));
+
 $routerPages = array(
-	'about' => '/about',
+    'about' => '/about',
     'membership' => '/membership',
-	'privacy' => '/privacy',
-	'contact' => '/contact',
+    'privacy' => '/privacy',
+    'contact' => '/contact',
     'terms_and_conditions'=>'/terms-and-conditions',
-	'terms' => '/terms'
+    'terms' => '/terms'
 );
 foreach ($routerPages as $page => $url) {
-	Router::connect($url, array('controller' => 'pages', 'action' => $page));
+  Router::connect($url, array('controller' => 'pages', 'action' => $page));
 }
- 
-	CakePlugin::routes();
+
+CakePlugin::routes();
 
 /**
  * Load the CakePHP default routes. Only remove this if you do not want to use
  * the built-in default routes.
- */
-	require CAKE . 'Config' . DS . 'routes.php';
+*/
+require CAKE . 'Config' . DS . 'routes.php';
