@@ -1,7 +1,7 @@
 <?php
-	echo $this->Form->create('Drug', array('action' => 'showDrugsByCountyAndZip'));
-		echo $this->Form->hidden('zip_code', array('value' => $this->request->data['Drug']['zip_code']));
-    	echo $this->Form->hidden('county_name', array('value' => $this->request->data['Drug']['county_name']));
+	echo $this->Form->create('Drugs', array('action' => 'showDrugsByCountyAndZip'));
+		echo $this->Form->hidden('zip_code', array('value' => $this->request->data['Drugs']['zip_code']));
+    	echo $this->Form->hidden('county_name', array('value' => $this->request->data['Drugs']['county_name']));
     	
     	echo '<div class="input text">';
     		echo '<label for="drug_name">Name of Drug:</label>';

@@ -22,7 +22,7 @@ if (isset($_POST['Submit'])) {
 
 }
 
-echo '<p>By County: ' . $this->request->data['Drug']['county_name'] . '</p>';
+echo '<p>By County: ' . $this->request->data['Drugs']['county_name'] . '</p>';
 
 ?>
 <table>
@@ -30,9 +30,9 @@ echo '<p>By County: ' . $this->request->data['Drug']['county_name'] . '</p>';
         <th>Enter your drugs</th>
     </tr>
     <?php
-    echo $this->Form->create('Drug',array('action'=>'findDrugs'));
-    	echo $this->Form->hidden('zip_code', array('value' => $this->request->data['Drug']['zip_code']));
-    	echo $this->Form->hidden('county_name', array('value' => $this->request->data['Drug']['county_name']));?>
+    echo $this->Form->create('Drugs',array('action'=>'findDrugs'));
+    	echo $this->Form->hidden('zip_code', array('value' => $this->request->data['Drugs']['zip_code']));
+    	echo $this->Form->hidden('county_name', array('value' => $this->request->data['Drugs']['county_name']));?>
 
         <tr>
             <td>

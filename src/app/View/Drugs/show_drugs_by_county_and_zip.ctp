@@ -19,5 +19,5 @@ echo '<table>';
 		echo '</tr>';
 	} 
 echo '</table>'; 
-echo $this->Paginator->numbers(array('model' => 'DrugModel')); 
+//echo $this->Paginator->numbers(array('model' => 'DrugModel')); 
 ?>

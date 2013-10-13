@@ -19,6 +19,11 @@ class DrugsController extends AppController {
     $this->loadModel('Drugs');
   }
   
+  public function beforeFilter() {
+    parent::beforeFilter();
+    $this->Auth->allow('enterDrugs', 'findDrugs', 'showDrugsByCountyAndZip');
+  }
+  
   public function enterDrugs() {
     
   }
@@ -30,10 +35,10 @@ class DrugsController extends AppController {
   public function showDrugsByCountyAndZip() {
     //$this->Paginator->settings = $this->paginate;
     $data =& $this->request->data;
-    if (!isset($data['Drug'])) {
+    if (!isset($data['Drugs'])) {
       return;
     }
-    $drug =& $data['Drug'];
+    $drug =& $data['Drugs'];
     $zip_code = $drug['zip_code'];
     $county_name = $drug['county_name'];
     $filter_by_drug_name = $drug['drug_name'];
@@ -51,7 +56,6 @@ class DrugsController extends AppController {
         'fields' => array('Drugs.drug_id', 'Drugs.drug_name', 'Drugs.dose', 'Drugs.frequency'),
         'conditions' => array('Drugs.drug_name LIKE' => '%' . $filter_by_drug_name . '%'),
         'page' => $page,
-        'pageCount' => 15,
         'limit' => $limit
     ));
     

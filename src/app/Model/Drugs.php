@@ -20,7 +20,7 @@ class Drugs extends AppModel {
   public $belongsTo = array(
       'PharmacyType' => array(
           'className' => 'PharmacyType',
-          'foreignKey' => 'user_type_id',
+          'foreignKey' => 'pharmacy_type_id',
           'conditions' => '',
           'fields' => '',
           'order' => ''
