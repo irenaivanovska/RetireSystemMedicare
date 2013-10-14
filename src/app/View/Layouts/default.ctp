@@ -5,8 +5,8 @@
         <?php echo $title_for_layout; ?>
     </title>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="/js/jquery-1.10.2.js"></script>
+    <script src="/js/jquery-ui.js"></script>
     <link rel="stylesheet" href="/resources/demos/style.css" />
     <script>
         $(function() {
@@ -56,39 +56,16 @@
         <li class='last'><?php echo $this->Html->link('Log In', array('controller' => 'users', 'action'=>'login'))?></li>
     </ul>
 </div>
-<div id="container">
-    <div id="headline">
-        <div id="quote" class="get_quote">
-            <h2>Get a Quote</h2>
-            <p>Medicare & Supplements</p>
-            <?php
-            echo $this->Form->create('ZipFind', array('action'=> 'view' ));
-            echo $this->Form->input('query', array('type'=>'text', 'label'=>'Zip Code'));
-            echo $this->Form->end('Find Plans');?>
-            <div id="dialog" title="Select Your Country">
-                 <table>
-                    <tr>
-                        <th> Country name</th>
-                    </tr>
-
-                    <?php
-                      echo $this -> Form -> create('Zips');
-                     foreach ($zipFinds as $zipFind): ?>
-                    <tr>
-                        <td><?php echo $this->Form->radio($zipFind['ZipFind']['county_name'], array('name' => $zipFind['ZipFind']['county_name']), array('class'=>'inputType', 'legend'=>false));?></td>
-                    </tr>
-                    <?php endforeach;?>
-
-                </table>
-                <?php echo $this->Form->end('Next');?>
-            </div>
-            <button id="opener">Find Plans</button>
-        </div>
-       <div class="headline_text">We'll find the plan that's right for you!</div>
-    </div>
-    <div id="content">
-        <?php echo $this-> fetch('content') ?>
-    </div>
+<?php
+echo '<div id="container">';
+	echo '<div id="headline">';
+		echo $this->element('zip_find');
+		echo '<div class="headline_text">We\'ll find the plan that\'s right for you!</div>';
+    echo '</div>';
+    echo $this->element('show_countries_by_zip');
+	echo '<div id="content">';
+		echo $this->fetch('content');
+	echo '</div>'; ?>
     <div id="footer">
         <table>
             <tbody>
