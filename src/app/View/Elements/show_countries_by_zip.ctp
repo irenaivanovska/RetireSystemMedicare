@@ -1,12 +1,19 @@
 <?php
-if (isset($zipFinds)) {
-	echo '<div id="dialog" title="Select Your Country">'; 
-		echo $this->Form->create('Drugs', array('action'=>'enterDrugs'));
-		echo $this->Form->hidden('zip_code', array('value' => $this->request->data['ZipFind']['query']));
-		echo '<table>';
-			echo '<tr>';
-				echo '<th>Country name</th>';
-			echo '</tr>';
+$query = '';
+if ($this->request->is('post')) {
+	$query = $this->request->data['ZipFind']['query'];
+}
+
+//here call an ajax to fill county list
+
+echo '<div id="dialog" title="Select Your Country">'; 
+	echo $this->Form->create('Drugs', array('action'=>'enterDrugs'));
+	echo $this->Form->hidden('zip_code', array('value' => $query));
+	echo '<table>';
+		echo '<tr>';
+			echo '<th>Country name</th>';
+		echo '</tr>';
+		if (isset($zipFinds)) {
 			foreach ($zipFinds as $zipFind) {
 				$zip =& $zipFind['ZipFind'];
 				$county_name = $zip['county_name'];
@@ -21,7 +28,8 @@ if (isset($zipFinds)) {
 					echo '</td>';
 				echo '</tr>';
 			}
-		echo '</table>';
-		echo $this->Form->end('Next');
-	echo '</div>'; 
-} ?>
+		}
+	echo '</table>';
+	echo $this->Form->end('Next');
+echo '</div>'; 
+?>

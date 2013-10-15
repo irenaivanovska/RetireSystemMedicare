@@ -4,10 +4,18 @@
     <title>
         <?php echo $title_for_layout; ?>
     </title>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <script src="/js/jquery-1.10.2.js"></script>
-    <script src="/js/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <link rel="stylesheet" href="/js/jquery-ui/themes/base/jquery-ui.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/jquery-ui/ui/jquery-ui.js"></script>
+	<script src="/js/jquery-ui/ui/jquery.ui.core.js"></script>
+	<script src="/js/jquery-ui/ui/jquery.ui.position.js"></script>
+	<script src="/js/jquery-ui/ui/jquery.ui.widget.js"></script>
+	<script src="/js/jquery-ui/ui/jquery.ui.mouse.js"></script>
+	<script src="/js/jquery-ui/ui/jquery.ui.draggable.js"></script>
+	<script src="/js/jquery-ui/ui/jquery.ui.resizable.js"></script>
+	<script src="/js/jquery-ui/ui/jquery.ui.button.js"></script>
+	<script src="/js/jquery-ui/ui/jquery.ui.dialog.js"></script>
+
     <script>
         $(function() {
             $( "#dialog" ).dialog({
