@@ -16,35 +16,9 @@
 	<script src="/js/jquery-ui/ui/jquery.ui.button.js"></script>
 	<script src="/js/jquery-ui/ui/jquery.ui.dialog.js"></script>
 
-    <script>
-        $(function() {
-            $( "#dialog" ).dialog({
-                autoOpen: false,
-                title: 'Select your country',
-                width: 'auto',
-                position: 'center',
-                resizeable: true,
-                modal: true,
-                draggable: true,
-                closeOnEscape: true,
-                closeText: 'close',
-                show: {
-                    effect: "blind",
-                    duration: 1000
-                },
-                hide: {
-                    effect: "explode",
-                    duration: 1000
-                }
-            });
-            $( "#opener" ).click(function() {
-                $( "#dialog" ).dialog( "open" );
-            });
-        });
-    </script>
-    <?php echo $this-> Html -> css ('cake.generic') ?>
-    <?php echo $this-> Html -> css ('retiree.style')?>
-
+    <script src="/js/global.js" type="text/javascript"></script><?php 
+    echo $this->Html->css('cake.generic');
+    echo $this->Html->css('retiree.style'); ?>
 </head>
 <body>
 <div id="header">
@@ -70,7 +44,8 @@ echo '<div id="container">';
 		echo $this->element('zip_find');
 		echo '<div class="headline_text">We\'ll find the plan that\'s right for you!</div>';
     echo '</div>';
-    echo $this->element('show_countries_by_zip');
+    echo '<div id="tblCountries"></div>';
+    //echo $this->element('show_countries_by_zip');
 	echo '<div id="content">';
 		echo $this->fetch('content');
 	echo '</div>'; ?>
