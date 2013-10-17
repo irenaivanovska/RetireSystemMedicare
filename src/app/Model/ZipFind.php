@@ -1,7 +1,7 @@
 <?php
 class ZipFind  extends AppModel {
   public $name = 'ZipFinds';
-  public $useTable = 'vwplansbyzipnew_local';
+  public $useTable = 'plans'; //'vwplansbyzipnew_local';
 
 
   var $validate = array(

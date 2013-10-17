@@ -1,7 +1,7 @@
 <?php
 class ZipFindsController extends AppController{
   public $name = 'ZipFinds';
-  public $useTable = 'vwplansbyzipnew_local';
+  public $useTable = 'plans'; //'vwplansbyzipnew_local';
   public $helpers = array('Html','Form');
 
   public function index(){
