@@ -1,1 +1,1 @@
-<?php $this->element('enter_drugs'); ?>
+<?php echo $this->element('enter_drugs'); ?>

@@ -10,11 +10,7 @@ var Ace = {
   }
 }
 $(function() {
-  
-  $("#opener").click(function() {
-    Ace.Ajax.post('#ZipFindViewForm').done(function(aData) {
-      $("tblCountries").innerHTML(aData);
-      $("#dialog").dialog({
+  $("#dialog").dialog({
     autoOpen : false,
     title : 'Select your country',
     width : 'auto',
@@ -33,6 +29,9 @@ $(function() {
       duration : 1000
     }
   });
+  $("#opener").click(function() {
+    Ace.Ajax.post('#ZipFindViewForm').done(function(aData) {
+      $("#tblCountries").html(aData);
       $("#dialog").dialog("open");
     });
   });

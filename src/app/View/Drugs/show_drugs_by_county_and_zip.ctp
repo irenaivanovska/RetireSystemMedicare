@@ -15,7 +15,7 @@ echo '<table>';
 			echo '<td>' . $data['drug_name'] . '</td>';
 			echo '<td>' . $data['dose'] . '</td>';
 			echo '<td>' . $data['frequency'] . '</td>';
-			echo '<td><a href="action=showdetail&drug_id=' . $drug_id . '">More...</a></td>';
+			echo '<td><a href="/drugs/showDetail/' . $drug_id . '">More...</a></td>';
 		echo '</tr>';
 	} 
 echo '</table>'; 

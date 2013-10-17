@@ -6,7 +6,11 @@ if ($this->request->is('post')) {
 
 //here call an ajax to fill county list
 
-echo '<div id="dialog" title="Select Your Country">'; 
+$isAjax = ($this->request->is('ajax')) ? true : false;
+
+if (!$isAjax) {
+	echo '<div id="dialog" title="Select Your Country">';
+} 
 	echo $this->Form->create('Drugs', array('action'=>'enterDrugs'));
 	echo $this->Form->hidden('zip_code', array('value' => $query));
 	echo '<table>';
@@ -31,5 +35,7 @@ echo '<div id="dialog" title="Select Your Country">';
 		}
 	echo '</table>';
 	echo $this->Form->end('Next');
-echo '</div>'; 
+if (!$isAjax) {
+	echo '</div>';
+} 
 ?>
