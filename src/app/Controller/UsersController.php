@@ -275,6 +275,8 @@ class UsersController extends AppController {
 	    if ($this->request->is('post')) {
 			
 	        if ($this->Auth->login()) {
+	                      
+	          
 	        	//$this->redirect($this->Auth->redirect());
 				if($auto===true) { $this->redirect(array('controller' => 'users', 'action' => 'member_type')); } 
 				else { 

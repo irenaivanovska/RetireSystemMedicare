@@ -57,7 +57,7 @@ class DrugsController extends AppController {
     $this->Drugs->recursive = 0;
     $drugs_list = $this->Drugs->find('all', array(
         'fields' => array('Drugs.drug_id', 'Drugs.drug_name', 'Drugs.dose', 'Drugs.frequency'),
-        'conditions' => array('Drugs.drug_name LIKE' => '%' . $filter_by_drug_name . '%'),
+        'conditions' => array('Drugs.drug_name LIKE' => $filter_by_drug_name . '%'),
     ));
     
     $this->set('filter_by_drug_name', $filter_by_drug_name);

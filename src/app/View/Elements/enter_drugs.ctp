@@ -36,16 +36,37 @@ echo '<p>By County: ' . $this->request->data['Drugs']['county_name'] . '</p>';
         <tr>
             <td>
                 <?php
-                $options =  array( '1' => 'Enter your drugs now','2'=>'Enter your drugs later','3'=>'I dont have any drugs');
+                $options = array(
+                	'1' => 'Enter your drugs now',
+                	'2' => 'Enter your drugs later',
+                	'3' => 'I dont have any drugs'
+                );
                 $attributes = array(
                     'legend' => false,
-                    'value' => '1',
-                    'default' => '1'
-
+                    'value' => '',
                 );
-                echo $this->Form->radio('options', $options, $attributes ); ?>
+                echo $this->Form->radio('options', $options, $attributes); 
+                ?>
             </td>
         </tr>
 
 </table>
-<?php echo $this->Form->submit('Next');?>
+<script type="text/javascript">
+	function submitSelectedOption(sender) {
+	    var lDrugsLink = "<?php echo $this->Form->url(array('controller' => 'Drugs', 'action' => 'findDrugs'), true); ?>";
+        var lZipFindLink = "<?php echo $this->Form->url(array('controller' => 'ZipFinds', 'action' => 'showPlansByZipAndCounty'), true); ?>";
+        var lSelValue = $("input[type='radio'][name='data[Drugs][options]']:checked").val()
+		if (lSelValue > '') {
+			var lLink = null;
+			if (lSelValue == '1') {
+				lLink = lDrugsLink;
+			} else {
+				lLink = lZipFindLink;
+			}
+			sender.form.action = lLink;
+			sender.form.submit();
+		}
+		return true;
+	}
+</script>
+<?php echo $this->Form->button('Next', array('type' => 'button', 'onclick' => 'submitSelectedOption(this)'));?>

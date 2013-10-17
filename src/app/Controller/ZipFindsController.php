@@ -28,12 +28,55 @@ class ZipFindsController extends AppController{
     if ($isAjax) {
       $this->layout = 'ajax';
     }
-    $this->ZipFind->recursive = 0;
-    $planFinds = $this->ZipFind->find('all', array(
-        'fields' => array('ZipFind.county_name','zip','zip_code','state_name', 'name', 'web_addr', 'textcond', 'description'),
-        'conditions' => array('ZipFind.zip_code' => $this->request->data['ZipFind']['query']))
+    
+    $zip_code = '';
+    $request =& $this->request;
+    $post = null;
+    $filter = array();
+    if ($request->is('post')) {
+      if (isset($request->data['Drugs'])) {
+        $post =& $request->data['Drugs'];
+        $zip_code = $post['zip_code'];
+      } else if (isset($request->data['ZipFind'])) {
+        $post =& $request->data['ZipFind'];
+        $zip_code = $post['query'];
+      }
+      $filter['ZipFind.zip_code'] = $zip_code;
+    }
+    
+    $options = array(
+        'fields' => array('ZipFind.plan_id', 'ZipFind.county_name','ZipFind.zip','ZipFind.zip_code','ZipFind.county_name', 'ZipFind.state_name', 'ZipFind.name', 'ZipFind.web_addr', 'ZipFind.textcond', 'ZipFind.description'),
+        'limit' => 10
     );
+    if (count($filter) > 0) {
+      $options['conditions'] = $filter;
+    }
+    
+    $this->ZipFind->recursive = 0;
+    $planFinds = $this->ZipFind->find('all', $options);
     $this->set('planFinds',$planFinds);
+  }
+  
+  public function addToFavorites() {
+    $plan_id = (int)$this->params['pass'][0];
+    $message = '';
+    if ($plan_id > 0) {
+      $user = $this->Auth->User();
+      if ($user) {
+        $message = 'loggedin';
+      } else {
+        $name = 'Plans.Favorites';
+        if ($this->Session->check($name)) {
+            $this->Session->write($name, am(
+               $this->Session->read($name),
+               array($plan_id)
+            ));
+        } else {
+            $this->Session->write($name, array($plan_id));
+        }
+      }
+    }
+    $this->set('message', $this->Session->read($name));
   }
   
 
@@ -44,7 +87,7 @@ class ZipFindsController extends AppController{
   
   public function beforeFilter() {
     parent::beforeFilter();
-    $this->Auth->allow('view', 'index', 'search', 'showPlansByZipAndCounty');
+    $this->Auth->allow('view', 'index', 'search', 'showPlansByZipAndCounty', 'addToFavorites');
   }
 
 }

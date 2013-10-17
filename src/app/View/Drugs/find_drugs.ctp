@@ -16,7 +16,7 @@
     			echo '</div><div>';
     			$cnt = 0;
     		}
-    		echo '<button type="button" name="btnFindDrugBy" id="btnFindDrugBy' . $ch .'" onclick="this.form.DrugsDrugName.text=\'' . $ch . '\'; this.form.submit();">' . $ch . '</button>';
+    		echo '<button type="button" name="btnFindDrugBy" id="btnFindDrugBy' . $ch .'" onclick="document.getElementById(\'DrugsDrugName\').value=\'' . $ch . '\'; this.form.submit(); ">' . $ch . '</button>';
     		$cnt++;
     	}
         echo '</div></div>';
