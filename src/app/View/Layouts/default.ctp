@@ -3,20 +3,25 @@
 <head>
     <title>
         <?php echo $title_for_layout; ?>
-    </title>
-    <link rel="stylesheet" href="/js/jquery-ui/themes/base/jquery-ui.css" />
-    <script src="/js/jquery.js"></script>
-    <script src="/js/jquery-ui/ui/jquery-ui.js"></script>
-	<script src="/js/jquery-ui/ui/jquery.ui.core.js"></script>
-	<script src="/js/jquery-ui/ui/jquery.ui.position.js"></script>
-	<script src="/js/jquery-ui/ui/jquery.ui.widget.js"></script>
-	<script src="/js/jquery-ui/ui/jquery.ui.mouse.js"></script>
-	<script src="/js/jquery-ui/ui/jquery.ui.draggable.js"></script>
-	<script src="/js/jquery-ui/ui/jquery.ui.resizable.js"></script>
-	<script src="/js/jquery-ui/ui/jquery.ui.button.js"></script>
-	<script src="/js/jquery-ui/ui/jquery.ui.dialog.js"></script>
+    </title><?php
+    echo $this->Html->css('/js/jquery-ui/themes/base/jquery-ui.css');
 
-    <script src="/js/global.js" type="text/javascript"></script><?php 
+    $javascript_options = array('type' => 'text/javascript'); 
+    
+    echo $this->Html->script('/js/jquery.js', $javascript_options);
+    echo $this->Html->script('/js/jquery-ui/ui/jquery-ui.js', $javascript_options);
+	echo $this->Html->script('/js/jquery-ui/ui/jquery.ui.core.js', $javascript_options);
+	echo $this->Html->script('/js/jquery-ui/ui/jquery.ui.position.js', $javascript_options);
+	echo $this->Html->script('/js/jquery-ui/ui/jquery.ui.widget.js', $javascript_options);
+	echo $this->Html->script('/js/jquery-ui/ui/jquery.ui.mouse.js', $javascript_options);
+	echo $this->Html->script('/js/jquery-ui/ui/jquery.ui.draggable.js', $javascript_options);
+	echo $this->Html->script('/js/jquery-ui/ui/jquery.ui.resizable.js', $javascript_options);
+	echo $this->Html->script('/js/jquery-ui/ui/jquery.ui.button.js', $javascript_options);
+	echo $this->Html->script('/js/jquery-ui/ui/jquery.ui.dialog.js', $javascript_options);
+	
+	echo $this->Html->script('/js/global.js', $javascript_options);
+    
+    
     echo $this->Html->css('cake.generic');
     echo $this->Html->css('retiree.style'); ?>
 </head>
