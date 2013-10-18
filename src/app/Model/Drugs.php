@@ -26,4 +26,4 @@ class Drugs extends AppModel {
           'order' => ''
       ),
   );
-}
+} ?>
