@@ -30,7 +30,16 @@ class DrugsController extends AppController {
   }
   
   public function findDrugs() {
-    
+    $zip_code = '';
+    $county_name = '';
+    $data =& $this->request->data;
+    if (isset($data['Drugs'])) {
+      $drug =& $data['Drugs'];
+      $zip_code = $drug['zip_code'];
+      $county_name = $drug['county_name'];
+    }
+    $this->set('zip_code', $zip_code);
+    $this->set('county_name', $county_name);
   }
   
   protected function checkAjax() {

@@ -101,7 +101,7 @@
 .acebox {
   border: 3px solid solid;
   border-radius: 10px 10px 10px 10px;
-  box-shadow: 5px 5px 5px #333;
+  /* box-shadow: 5px 5px 5px #333; */
   padding: 5px 5px 5px 5px;
 }
 .acebox h1 {
@@ -118,4 +118,71 @@
   letter-spacing: 0;
   line-height: 1.4em;
   font-size: 1em;
+}
+
+.blueForm {
+  display: block;
+  background-color: #1292d3;
+  color: white;
+  width: 400px; height: 190px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  margin: 10px 10px 10px 0;
+  text-align: center;
+  vertical-align: middle;
+}
+.blueForm div.ll {
+  display: table;
+  position: static;
+  padding: 0;
+  margin: auto;
+  text-align: left;
+  vertical-align: bottom;
+  width: 360px; height: 150px;
+  border: none;
+}
+.blueForm div div {
+  display: table-row;
+  float: left;
+  clear: both;
+  padding: 2px 0 2px 0;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+.blueForm div div * {
+  display: table-cell;
+}
+.blueForm div div button {
+  float: left;
+  clear: none;
+  display: block;
+  
+  border: 1px solid #333;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  padding: 0;
+  margin: 0 0 0 2px;
+  
+  font-familly: Arial;
+  font-size: 10px;
+  cursor: pointer;
+}
+.blueForm div p {
+  color: white;
+  font-family: Verdana;
+  font-size: 1em;
+  background: none;
+  text-indent: 0;
+  margin: 0 0 20px 0;
+}
+
+.blueForm h2 {
+  color: white;
+  background: none; 
+  width: auto;
+  height: 50px;
+  text-shadow:1px 2px 2px #333333, 2px 2px 2px #333333;
 }
