@@ -21,6 +21,7 @@ class DrugsController extends AppController {
   
   public function beforeFilter() {
     parent::beforeFilter();
+    $this->checkAjax();
     $this->Auth->allow('enterDrugs', 'findDrugs', 'showDrugsByCountyAndZip', 'showDetail');
   }
   
@@ -30,6 +31,14 @@ class DrugsController extends AppController {
   
   public function findDrugs() {
     
+  }
+  
+  protected function checkAjax() {
+    $isAjax = ($this->request->is('ajax')) ? true : false;
+    if ($isAjax) {
+      $this->layout = 'ajax';
+    }
+    return $isAjax;
   }
   
   public function showDrugsByCountyAndZip() {

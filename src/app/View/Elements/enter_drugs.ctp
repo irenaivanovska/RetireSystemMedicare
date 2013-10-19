@@ -1,72 +1,56 @@
-<?PHP
-$status = 'unchecked';
+<?php
+$isAjax = ($this->request->is('ajax')) ? true : false;
 
-if (isset($_POST['Submit'])) {
-
-    $selected_radio = $_POST['zips'];
-
-    if ($selected_radio == '1') {
-
-        $status = 'checked';
-
-    }
-    else if ($selected_radio == '2') {
-
-        $status = 'checked';
-
-    }
-    else
-    {
-        $status = 'checked';
-    }
-
+if (!$isAjax) {
+	echo '<p>By County: ' . $this->request->data['Drugs']['county_name'] . '</p>';
 }
-
-echo '<p>By County: ' . $this->request->data['Drugs']['county_name'] . '</p>';
-
-?>
-<table>
-    <tr>
-        <th>Enter your drugs</th>
-    </tr>
-    <?php
-    echo $this->Form->create('Drugs',array('action'=>'findDrugs'));
-    	echo $this->Form->hidden('zip_code', array('value' => $this->request->data['Drugs']['zip_code']));
-    	echo $this->Form->hidden('county_name', array('value' => $this->request->data['Drugs']['county_name']));?>
-        <tr>
-            <td>
-                <?php
-                $options = array(
-                	'1' => 'Enter your drugs now',
-                	'2' => 'Enter your drugs later',
-                	'3' => 'I dont have any drugs'
-                );
-                $attributes = array(
-                    'legend' => false,
-                    'value' => '',
-                );
-                echo $this->Form->radio('options', $options, $attributes); 
-                ?>
-            </td>
-        </tr>
-
-</table>
-<script type="text/javascript">
-	function submitSelectedOption(sender) {
-	    var lDrugsLink = "<?php echo $this->Form->url(array('controller' => 'Drugs', 'action' => 'findDrugs'), true); ?>";
-        var lZipFindLink = "<?php echo $this->Form->url(array('controller' => 'ZipFinds', 'action' => 'showPlansByZipAndCounty'), true); ?>";
-        var lSelValue = $("input[type='radio'][name='data[Drugs][options]']:checked").val()
-		if (lSelValue > '') {
-			var lLink = null;
-			if (lSelValue == '1') {
-				lLink = lDrugsLink;
-			} else {
-				lLink = lZipFindLink;
+echo $this->Form->create('Drugs',array('action'=>'findDrugs'));
+	echo $this->Form->hidden('zip_code', array('value' => $this->request->data['Drugs']['zip_code']));
+	echo $this->Form->hidden('county_name', array('value' => $this->request->data['Drugs']['county_name']));
+	echo '<div class="form-content">';
+		$attributes = array(
+            'legend' => false,
+            'multiple' => false, 
+            'hiddenField' => false
+        );
+		echo '<div>';
+			echo $this->Form->radio('options', array('1' => 'Enter your drugs now'), $attributes);
+		echo '</div>';
+		echo '<div>';
+			echo $this->Form->radio('options', array('2' => 'Enter your drugs later'), $attributes);
+		echo '</div>';
+		echo '<div>';
+			echo $this->Form->radio('options', array('3' => 'I dont have any drugs'), $attributes);
+		echo '</div>';
+      echo '</div>';
+    echo '</div>';
+    echo '<div>';
+    	echo '<h1>Why Should I Enter My Drugs?</h1>';
+    	echo '<div>Text goes here</div>';
+    echo '</div>'; ?>
+	<script type="text/javascript">
+		function submitSelectedOption(sender) {
+		    var lDrugsLink = "<?php echo $this->Form->url(array('controller' => 'Drugs', 'action' => 'findDrugs'), true); ?>";
+	        var lZipFindLink = "<?php echo $this->Form->url(array('controller' => 'ZipFinds', 'action' => 'showPlansByZipAndCounty'), true); ?>";
+	        var lSelValue = $("input[type='radio'][name='data[Drugs][options]']:checked").val()
+			if (lSelValue > '') {
+				var lLink = null;
+				if (lSelValue == '1') {
+					lLink = lDrugsLink;
+				} else {
+					lLink = lZipFindLink;
+				}
+				sender.form.action = lLink;
+				sender.form.submit();
 			}
-			sender.form.action = lLink;
-			sender.form.submit();
+			return true;
 		}
-		return true;
-	}
-</script>
-<?php echo $this->Form->button('Next', array('type' => 'button', 'onclick' => 'submitSelectedOption(this)'));?>
+	</script>
+<?php
+echo '<div class="form_submit_line">';
+	echo $this->Form->button('Next', array('type' => 'button', 'id' => 'btnFindDrugs', 'div' => false, 'class' => 'prettyButton', 'onclick' => 'submitSelectedOption(this)'));
+	echo '<span> or </span>';
+	echo $this->Form->button('Cancel', array('type' => 'button', 'class' => 'prettyButton', 'title' => 'close', 'role' => 'button', 'onclick' => '$(\'#dialog\').dialog(\'close\');'));
+echo '</div>';
+echo $this->form->end(); 
+?>	

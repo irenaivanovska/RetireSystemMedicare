@@ -1,0 +1,121 @@
+@CHARSET "UTF-8";
+
+.form-content {
+  display: table;
+  width: 100%;
+}
+.form-content div {
+  display: table-row;
+  width: 100%;
+  border: 1px solid blue;
+}
+.form-content div * {
+  clear: none;
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  margin: 0 0 0 4px;
+  padding: 0;
+}
+
+.form_submit_line * {
+  float: left;
+  display: inline;
+}
+
+.form_submit_line * {
+  height: 30px;
+  line-height: 30px;
+}
+
+.prettyButton,.form_submit_line button,.form_submit_line input {
+  background: linear-gradient(to bottom, #E8C418 0%, #F29B1A 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: 1px solid #2D6324;
+  border-radius: 5px 5px 5px 5px;
+  color: #FFFFFF;
+  display: inline;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 5px 0 5px;
+  padding: 0 4px 0 4px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+  width: auto;
+}
+
+.prettyButton:hover, .form_submit_line button:hover, .form_submit_line input:hover {
+  background: none repeat scroll 0% 0% #e8c418;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+.form_submit_line {
+  display: block;
+  width: 200px;
+}
+
+.form_submit_line input,.form_submit_line button,.form_submit_line {
+  width: auto;
+}
+
+/**** Begin: Customizing dialog boxes *********************************************************/
+.medi-dialog {
+  background: solid white;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px #333;
+  border-radius: 10px;
+  padding: 0;
+  min-width: 400px;
+}
+.medi-dialog .ui-dialog-titlebar {
+  position: relative;
+  width: 100%;
+  color: white;
+  text-shadow:2px 2px 2px #333333;
+  background: none repeat scroll 0 0 #1292d3;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  float: left;
+  margin: 0;
+  padding: 10px 0 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 10px;
+  font-family: Arial;
+  text-decoration: none;
+  word-spacing: normal;
+  text-align: left;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  font-size: 1.6em;
+  font-weight: 10px;
+}
+
+.medi-dialog .ui-dialog-titlebar-close {display: none }
+
+.medi-dialog-title {
+  
+}
+/**** End: Customizing dialog boxes ***********************************************************/
+
+.acebox {
+  border: 3px solid solid;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 5px 5px 5px #333;
+  padding: 5px 5px 5px 5px;
+}
+.acebox h1 {
+  color: #0C92D1;
+  font-size: 2em;
+}
+.acebox p {
+  font-family: Arial;
+  background-color: #fff;
+  color: #444;
+  text-decoration: none;
+  word-spacing: normal;
+  text-align: justify;
+  letter-spacing: 0;
+  line-height: 1.4em;
+  font-size: 1em;
+}

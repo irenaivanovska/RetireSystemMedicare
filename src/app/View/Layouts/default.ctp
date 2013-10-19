@@ -23,7 +23,8 @@
     
     
     echo $this->Html->css('cake.generic');
-    echo $this->Html->css('retiree.style'); ?>
+    echo $this->Html->css('retiree.style');
+    echo $this->Html->css('final'); //IMPORTANT this css should be the last added css, in order to override css layouts ?>
 </head>
 <body>
 <div id="header">

@@ -503,12 +503,14 @@ form .submit input[type="submit"] {
     background: -ms-linear-gradient(top,  #e8c418 0%,#f29b1a 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #e8c418 0%,#f29b1a 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8c418', endColorstr='#f29b1a',GradientType=0 ); /* IE6-9 */
-    border-color: #2D6324;
     color: #FFFFFF;
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.5);
     font-size: 80%;
     font-weight: bold;
     width: 100%;
+    
+    border: 1px solid #2D6324;
+    border-radius: 5px 5px 5px 5px;
 }
 
 form .submit input[type="submit"]:hover {
