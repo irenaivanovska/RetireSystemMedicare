@@ -54,26 +54,37 @@ echo '</div>';
 echo '<div class="list_drugs">';        
 	echo '<p class="blue_header">Current Drug List > total drugs listed:</p>';
 	echo '<table>';
-	    echo '<tr class="black_header">';
-			echo '<th>Drug name</th>';
-			echo '<th>Quantity</th>';
-			echo '<th>Frequency/Pharmacy</th>';
-			echo '<th>Generic</th>';
-			echo '<th>&nbsp;</th>';
-		echo '</tr>';
-		foreach($drugs_list as $item) {
-			$data =& $item['Drugs'];
-			$drug_id = $data['drug_id'];
-			echo '<tr class="black_border">';
-				echo '<td>' . $data['drug_name'] . '</td>';
-				echo '<td>' . $data['quantity'] . '</td>';
-				echo '<td>' . $data['frequency'] . '</td>';
-				echo '<td>' . ((int)$data['generic'] == 1) ? 'yes' : 'no') . '</td>';
-				echo '<td><a href="/drugs/showDetail/' . $drug_id . '">More...</a></td>';
+		echo '<thead>';
+		    echo '<tr class="black_header">';
+				echo '<th>Drug name</th>';
+				echo '<th>Quantity</th>';
+				echo '<th>Frequency/Pharmacy</th>';
+				echo '<th>Generic</th>';
+				echo '<th>&nbsp;</th>';
 			echo '</tr>';
-		} 
+		echo '</thead><tbody>';
+			foreach($drugs_list as $item) {
+				$data =& $item['Drugs'];
+				$drug_id = $data['drug_id'];
+				echo '<tr class="black_border">';
+					echo '<td>' . $data['drug_name'] . '</td>';
+					echo '<td>' . $data['quantity'] . '</td>';
+					echo '<td>' . $data['frequency'] . '</td>';
+					echo '<td>' . (((int)$data['generic'] == 1) ? 'yes' : 'no') . '</td>';
+					echo '<td><a href="/drugs/showDetail/' . $drug_id . '">More...</a></td>';
+				echo '</tr>';
+			}
+		echo '</tbody><tfoot>';
+			//echo $this->Paginator->numbers(array('model' => 'DrugModel'));
+			
+			echo $this->Form->create('ZipFinds', array('action'=>'showPlansByZipAndCounty'));
+				echo $this->Form->hidden('zip_code', array('value' => $zip_code));
+		    	echo $this->Form->hidden('county_name', array('value' => $county_name));
+				
+				echo $this->Form->submit('My List is Complete');
+			echo $this->Form->end();
+		echo '</tfoot>';
 	echo '</table>'; 
-	//echo $this->Paginator->numbers(array('model' => 'DrugModel'));
 echo '</div>';
 
 ?>
