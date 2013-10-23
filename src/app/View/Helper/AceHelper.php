@@ -1,3 +1,5 @@
+
+
 <?php
 /**
  * Application level View Helper
@@ -30,6 +32,24 @@ App::uses('Helper', 'View');
  *
  * @package       app.View.Helper
  */
-class AppHelper extends Helper {
+class AceHelper extends Helper {
   
+  public $helpers = array('Html', 'Form');
+  protected $defaultClass = 'TitledForm';
+  
+  public function create($model, $title, $options) {
+    if (!isset($options['class'])) {
+      $options['class'] = $this->defaultClass;
+    }
+    $html = $this->Form->create($model, $options);
+    if ($title > '') {
+      $html .= "\n\t" . '<div class="title"><span>' . $title . '<span></div>';  
+    }
+    $html .= "\n\t" . '<div class="content">';
+    return $html;
+  }
+  
+  public function end($options = null) {
+    return '</div>' . $this->Form->end($options);
+  }
 }

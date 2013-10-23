@@ -4,11 +4,13 @@
   display: table;
   width: 100%;
 }
+
 .form-content div {
   display: table-row;
   width: 100%;
   border: 1px solid blue;
 }
+
 .form-content div * {
   clear: none;
   float: left;
@@ -28,24 +30,48 @@
   line-height: 30px;
 }
 
-.prettyButton,.form_submit_line button,.form_submit_line input {
-  background: linear-gradient(to bottom, #E8C418 0%, #F29B1A 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-  border: 1px solid #2D6324;
-  border-radius: 5px 5px 5px 5px;
-  color: #FFFFFF;
-  display: inline;
-  font-family: Arial;
-  font-size: 12px;
-  font-weight: bold;
-  margin: 0 5px 0 5px;
-  padding: 0 4px 0 4px;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
-  width: auto;
+.right_box {
+  border: medium none !important;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 200px !important;
 }
 
-.prettyButton:hover, .form_submit_line button:hover, .form_submit_line input:hover {
+.right_box h1 {
+  font-size: 100%;
+  color: #1292d3;
+  font-weight: bold;
+}
+
+.right_box span {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.prettyButton,.form_submit_line button,.form_submit_line input {
+  background: #e8c418; /* Old browsers */
+  background: -moz-linear-gradient(top, #e8c418 0%, #f29b1a 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e8c418), color-stop(100%, #f29b1a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e8c418 0%, #f29b1a 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #e8c418 0%, #f29b1a 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #e8c418 0%, #f29b1a 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #e8c418 0%, #f29b1a 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(   startColorstr='#e8c418', endColorstr='#f29b1a', GradientType=0); /* IE6-9 */
+  border: 1px solid #333333;
+  border-radius: 5px 5px 5px 5px;
+  color: #FFFFFF;
+  font-family: Arial;
+  font-size: 90%;
+  font-weight: bold;
+  margin: 0 10px;
+  padding: 0 10px;
+  text-shadow: 2px -1px rgba(0, 0, 0, 0.5);
+}
+
+.prettyButton:hover,.form_submit_line button:hover,.form_submit_line input:hover {
   background: none repeat scroll 0% 0% #e8c418;
-  font-size: 80%;
+  font-size: 90%;
   font-weight: bold;
 }
 
@@ -67,11 +93,12 @@
   padding: 0;
   min-width: 400px;
 }
+
 .medi-dialog .ui-dialog-titlebar {
   position: relative;
   width: 100%;
   color: white;
-  text-shadow:2px 2px 2px #333333;
+  text-shadow: 2px 2px 2px #333333;
   background: none repeat scroll 0 0 #1292d3;
   border: none;
   border-radius: 8px 8px 0 0;
@@ -80,7 +107,7 @@
   padding: 10px 0 10px 0;
   overflow: hidden;
   white-space: nowrap;
-  text-indent: 10px;
+  text-indent: 30px;
   font-family: Arial;
   text-decoration: none;
   word-spacing: normal;
@@ -91,23 +118,26 @@
   font-weight: 10px;
 }
 
-.medi-dialog .ui-dialog-titlebar-close {display: none }
+.medi-dialog .ui-dialog-titlebar-close {
+  display: none
+}
 
 .medi-dialog-title {
   
 }
 /**** End: Customizing dialog boxes ***********************************************************/
-
 .acebox {
   border: 3px solid solid;
   border-radius: 10px 10px 10px 10px;
   /* box-shadow: 5px 5px 5px #333; */
   padding: 5px 5px 5px 5px;
 }
+
 .acebox h1 {
   color: #0C92D1;
   font-size: 2em;
 }
+
 .acebox p {
   font-family: Arial;
   background-color: #fff;
@@ -120,17 +150,69 @@
   font-size: 1em;
 }
 
+.TitledForm {
+  display: table;
+  background-color: white;
+  color: black;
+  width: 400px;
+  height: 190px;
+  border: 1px solid #333;
+  border-radius: 15px 15px 10px 10px;
+  margin: 10px 10px 10px 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.TitledForm .title {
+  display: table-row;
+  background-color: #1292d3;
+  color: white;
+  width: 100%; height: 45px;
+  border: 1px solid #333;
+  border-radius: 10px 10px 0 0;
+  
+  padding: 0;
+  text-shadow: 1px 2px 2px #333333, 2px 2px 2px #333333;
+  width: auto;
+}
+
+.TitledForm .title span {
+  display: inline;
+  background: none;
+  width: auto; height: auto;
+}
+
+.TitledForm .content div {
+  display: table;
+  float: left; clear: both; 
+  width: 100%;
+  padding: 10px 0 10px 0;
+  margin: 0;
+}
+
+.TitledForm .content div * {
+  display: table-cell;
+  float: left; clear: none;
+  padding: 0; margin: 0;
+}
+
+.TitledForm .content div button {
+  margin-right: 5px;
+}
+
 .blueForm {
   display: block;
   background-color: #1292d3;
   color: white;
-  width: 400px; height: 190px;
+  width: 400px;
+  height: 190px;
   border: 1px solid #333;
   border-radius: 10px;
   margin: 10px 10px 10px 0;
   text-align: center;
   vertical-align: middle;
 }
+
 .blueForm div.ll {
   display: table;
   position: static;
@@ -138,9 +220,11 @@
   margin: auto;
   text-align: left;
   vertical-align: bottom;
-  width: 360px; height: 150px;
+  width: 360px;
+  height: 150px;
   border: none;
 }
+
 .blueForm div div {
   display: table-row;
   float: left;
@@ -149,15 +233,17 @@
   margin: 0;
   overflow: hidden;
   width: 100%;
+  font-family: Arial;
 }
+
 .blueForm div div * {
   display: table-cell;
 }
+
 .blueForm div div button {
   float: left;
   clear: none;
   display: block;
-  
   border: 1px solid #333;
   border-radius: 3px;
   width: 20px;
@@ -165,14 +251,14 @@
   line-height: 20px;
   padding: 0;
   margin: 0 0 0 2px;
-  
   font-familly: Arial;
   font-size: 10px;
   cursor: pointer;
 }
+
 .blueForm div p {
   color: white;
-  font-family: Verdana;
+  font-family: Arial;
   font-size: 1em;
   background: none;
   text-indent: 0;
@@ -180,9 +266,24 @@
 }
 
 .blueForm h2 {
-  color: white;
-  background: none; 
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  color: #FFFFFF;
+  height: 45px;
+  padding-top: 10px;
+  text-shadow: 1px 2px 2px #333333, 2px 2px 2px #333333;
   width: auto;
-  height: 50px;
-  text-shadow:1px 2px 2px #333333, 2px 2px 2px #333333;
+}
+
+.blue_header {
+  background: #0C92D1 !Important;
+  border-radius: 6px 6px 0 0;
+  border: 1px solid #808080;
+  color: white !Important;
+  text-shadow: 1px 2px 2px #333333, 2px 2px 2px #333333 !Important;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Arial;
+  padding: 10px;
+  margin-bottom: -2px;
+  box-shadow: 2px -1px 1px gray;
 }

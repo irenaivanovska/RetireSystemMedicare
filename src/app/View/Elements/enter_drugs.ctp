@@ -24,9 +24,9 @@ echo $this->Form->create('Drugs',array('action'=>'findDrugs'));
 		echo '</div>';
       echo '</div>';
     echo '</div>';
-    echo '<div>';
-    	echo '<h1>Why Should I Enter My Drugs?</h1>';
-    	echo '<div>Text goes here</div>';
+    echo '<div class="right_box">';
+    echo '<h1>Why Should I <br/> Enter My Drugs?</h1>';
+    echo '<span>Text goes here about the <br/>good reasons the visitors <br/>should enter the drugs</span>';
     echo '</div>'; ?>
 	<script type="text/javascript">
 		function submitSelectedOption(sender) {
@@ -49,8 +49,8 @@ echo $this->Form->create('Drugs',array('action'=>'findDrugs'));
 <?php
 echo '<div class="form_submit_line">';
 	echo $this->Form->button('Next', array('type' => 'button', 'id' => 'btnFindDrugs', 'div' => false, 'class' => 'prettyButton', 'onclick' => 'submitSelectedOption(this)'));
-	echo '<span> or </span>';
-	echo $this->Form->button('Cancel', array('type' => 'button', 'class' => 'prettyButton', 'title' => 'close', 'role' => 'button', 'onclick' => '$(\'#dialog\').dialog(\'close\');'));
+//	echo '<span> or </span>';
+//	echo $this->Form->button('Cancel', array('type' => 'button', 'class' => 'prettyButton', 'title' => 'close', 'role' => 'button', 'onclick' => '$(\'#dialog\').dialog(\'close\');'));
 echo '</div>';
 echo $this->form->end(); 
 ?>	
