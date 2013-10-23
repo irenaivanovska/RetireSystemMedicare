@@ -32,4 +32,28 @@ App::uses('Helper', 'View');
  */
 class AppHelper extends Helper {
   
+  public function toUrl($filename, $ext, $pathPrefix) {
+    return $this->assetUrl($filename, array('pathPrefix' => $pathPrefix, 'ext' => $ext));
+  }
+  
+  public function toUrlCSS($filename) {
+    return $this->toUrl($filename, '.css', Configure::read('App.cssBaseUrl'));
+  }
+  
+  public function toPathCSS($relativePathCSS) {
+    return rtrim(ROOT, DS) . DS . rtrim(APP_DIR, DS) . DS . rtrim(WEBROOT_DIR, DS) . DS . ltrim($relativePathCSS, DS);
+  }
+  
+  public function getCurrentController() {
+    return $this->params['controller'];
+  }
+  
+  public function getCurrentAction() {
+    return $this->params['action'];
+  }
+  
+  public function getCurrentArgs() {
+    return $this->params['pass'];
+  }
+  
 }

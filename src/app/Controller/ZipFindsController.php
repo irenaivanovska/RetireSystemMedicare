@@ -55,6 +55,8 @@ class ZipFindsController extends AppController{
     $this->ZipFind->recursive = 0;
     $planFinds = $this->ZipFind->find('all', $options);
     $this->set('planFinds',$planFinds);
+    
+    $this->layout ='ZipFindsLayout';
   }
   
   public function addToFavorites() {
