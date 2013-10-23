@@ -43,7 +43,7 @@ class AceHelper extends Helper {
     }
     $html = $this->Form->create($model, $options);
     if ($title > '') {
-      $html .= "\n\t" . '<div class="title"><span>' . $title . '<span></div>';  
+      $html .= "\n\t" . '<div class="title"><span>' . $title . '</span></div>';  
     }
     $html .= "\n\t" . '<div class="content">';
     return $html;
