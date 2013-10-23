@@ -677,11 +677,25 @@ input[type="submit"]:active, .actions ul li a:active, .actions a:active {
   font-size: 12px;
   font-family: Arial;
   padding: 10px;
+  border-top: 1px solid #6a6a6a;
+  border-bottom: 1px solid #6a6a6a;
+  width: 100%;
+}
+.black_header th, .black_header td {
+  border-right: 1px solid #6a6a6a;
 }
 
-.black_border{
-    border: 1px solid #000000;
-    border-radius: 0 0 6px 6px;
+.black_border {
+  border: 1px solid #6a6a6a;
+  border-radius: 0 0 6px 6px;
+}
+.black-border td {
+  border-bottom: medium none;
+  color: #6a6a6a;
+  line-height: 30px;
+  padding: 5px;
+  text-align: left;
+  vertical-align: top;
 }
 
 .related {

@@ -51,16 +51,16 @@ echo '<div class="content_drugs">';
 	echo '</div>';
 echo '</div>';
 
-echo '<div class="list_drugs">';        
+echo '<div class="pre_list_drugs">';        
 	echo '<p class="blue_header">Current Drug List > total drugs listed:</p>';
-	echo '<table>';
+	echo '<table class="list-drugs" border="1px" cellpadding="0" cellspacing="0">';
 		echo '<thead>';
 		    echo '<tr class="black_header">';
 				echo '<th>Drug name</th>';
 				echo '<th>Quantity</th>';
 				echo '<th>Frequency/Pharmacy</th>';
-				echo '<th>Generic</th>';
-				echo '<th>&nbsp;</th>';
+				echo '<th>Generic?</th>';
+				echo '<th>Edit</th>';
 			echo '</tr>';
 		echo '</thead><tbody>';
 			foreach($drugs_list as $item) {
@@ -71,20 +71,24 @@ echo '<div class="list_drugs">';
 					echo '<td>' . $data['quantity'] . '</td>';
 					echo '<td>' . $data['frequency'] . '</td>';
 					echo '<td>' . (((int)$data['generic'] == 1) ? 'yes' : 'no') . '</td>';
-					echo '<td><a href="/drugs/showDetail/' . $drug_id . '">More...</a></td>';
+					//echo '<td><a href="/drugs/showDetail/' . $drug_id . '">More...</a></td>';
+					echo '<td>';
+						echo $this->Form->create('Drugs', array('action'=>'editItem', 'style' => 'margin: 0; width: auto'));
+							echo $this->Form->hidden('drug_id', array('value' => $drug_id));
+							echo $this->Form->submit('Edit Item', array('div' => false, 'class' => 'prettyButton'));
+						echo $this->Form->end();
+					echo '</td>';
 				echo '</tr>';
 			}
 		echo '</tbody><tfoot>';
 			//echo $this->Paginator->numbers(array('model' => 'DrugModel'));
-			
-			echo $this->Form->create('ZipFinds', array('action'=>'showPlansByZipAndCounty'));
-				echo $this->Form->hidden('zip_code', array('value' => $zip_code));
-		    	echo $this->Form->hidden('county_name', array('value' => $county_name));
-				
-				echo $this->Form->submit('My List is Complete');
-			echo $this->Form->end();
 		echo '</tfoot>';
 	echo '</table>'; 
+	echo $this->Form->create('ZipFinds', array('action'=>'showPlansByZipAndCounty', 'class' => 'drug-list-footer'));
+		echo $this->Form->hidden('zip_code', array('value' => $zip_code));
+    	echo $this->Form->hidden('county_name', array('value' => $county_name));
+		
+		echo $this->Form->submit('My List is Complete', array('div' => false, 'class' => 'prettyButton'));
+	echo $this->Form->end();
 echo '</div>';
-
 ?>
