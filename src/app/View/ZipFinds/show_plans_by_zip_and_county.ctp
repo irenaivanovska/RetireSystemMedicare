@@ -2,7 +2,8 @@
 echo '<div id="PlanListByZip">';
 	echo '<div id="MatchingPlansReport">';
 		echo '<span>Matching Plans</span>';
-	echo '</div>';
+    echo '</div>';
+echo $this->Form->submit('Filter Plans', array('type' => 'submit', 'class' => 'blueButton_Filter', 'value' => 'FilterPlans'));
 	if (isset($planFinds)) {
 		foreach ($planFinds as $planItem) {
 			$plan =& $planItem['ZipFind'];
@@ -17,11 +18,12 @@ echo '<div id="PlanListByZip">';
 				echo '<td>' . $plan['state_name'] . '</td>';
 				echo '<td>' . $this->Html->link('Add to favorites', array('controller' => 'ZipFinds', 'action' => 'addToFavorites', $plan_id, 'full_base' => true)) . '</td>';
 			echo '</tr>';*/
-			echo $this->Ace->create('ZipFinds', $plan['name'], array('action' => 'commandAction', 'class' => 'PlanListForm'));
+			echo $this->Ace->create('ZipFinds', $plan['name'], array('action' => 'commandAction', 'id' => 'PlanListForm'));
 				echo '<div class="PlanFindItem">';
 					echo '<div><b>Offered by:</b> ' . $plan['name'] . '</div>';
-					echo '<div><b>Coverage included</b></div>';
-					echo '<div><b>Montly premium</b></div>';
+					echo '<div><b>Coverage included:</b></div>';
+					echo '<div><b>Montly premium:</b>   <span class="float_right">Health Deductable:</span></div>';
+                    echo '<div><span class="float_right">Drug Deductable:</span></div>';
 				echo '</div>';
 				echo '<div class="PlanItemMenu">';
 					echo $this->Form->submit('Contact', array('type' => 'submit', 'class' => 'prettyButton', 'value' => 'contactPlan'));

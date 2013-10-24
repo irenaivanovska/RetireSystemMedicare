@@ -24,6 +24,7 @@ class ZipFindsController extends AppController{
   }
   
   public function showPlansByZipAndCounty() {
+    $this->loadModel('FAQ');
     $isAjax = ($this->request->is('ajax')) ? true : false;
     if ($isAjax) {
       $this->layout = 'ajax';
@@ -56,9 +57,11 @@ class ZipFindsController extends AppController{
     $planFinds = $this->ZipFind->find('all', $options);
     $this->set('planFinds',$planFinds);
     
-    $this->layout ='ZipFindsLayout';
+    $this->layout ='PlansList';
   }
-  
+  public function commandAction (){
+
+  }
   public function addToFavorites() {
     $plan_id = (int)$this->params['pass'][0];
     $message = '';

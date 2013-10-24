@@ -1,5 +1,15 @@
 @import url("http://fonts.googleapis.com/css?family=Capriola");
 
+.gray_header{
+    background:#414143; width:100%;padding: 20px; border-radius: 10px 0 0 0;
+}
+
+.gray_header_p{
+    color: #1292D3; font-size: 12px; font-weight: normal; text-decoration: underline;
+}
+.gray_block{
+    border-bottom: 1px solid white;
+}
 #cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a {
     font-family: 'Capriola',sans-serif;
     line-height: 1;
@@ -34,6 +44,11 @@
     float: left;
     list-style: none outside none;
 }
+.float_right{
+    font-weight: bold;
+    position: absolute;
+    right: 35%;
+}
 .button{
     background: #e8c418; /* Old browsers */
     background: -moz-linear-gradient(top,  #e8c418 0%, #f29b1a 100%); /* FF3.6+ */
@@ -51,6 +66,10 @@
     padding: 5px;
     position: relative;
     z-index: 10000;
+}
+.button a{
+    color: #fff !important;
+    text-shadow: 1px 1px gray;
 }
 #opener{
     background: #e8c418; /* Old browsers */

@@ -1,5 +1,31 @@
 @CHARSET "UTF-8";
 
+#MatchingPlansReport{
+    border-bottom: 1px solid #808080;
+    color: #000000;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: -40px;
+    padding-bottom: 20px;
+    width: 110%;
+}
+#PlanListForm .title{
+    background: linear-gradient(to bottom, #63b8f3 10%, #1292d3 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    border-radius: 10px 10px 0 0;
+}
+#PlanListForm {
+    width: 100%;
+}
+#PlanListForm .PlanItemMenu{
+    float: right;
+    margin-top: -75px;
+    margin-right: 20px;
+    width: 150px;
+    padding-bottom:5px ;
+}
+#PlanListForm .PlanItemMenu .submit{
+    padding-bottom:10px ;
+}
 .form-content {
   display: table;
   width: 100%;
@@ -65,7 +91,7 @@
   font-size: 90%;
   font-weight: bold;
   margin: 0 10px;
-  padding: 2px 0 2px 10px;
+  padding: 0 10px;
   text-shadow: 2px -1px rgba(0, 0, 0, 0.5);
 }
 
@@ -86,6 +112,18 @@
   margin: 0 10px;
   padding: 0 10px;
   text-shadow: 2px -1px rgba(0, 0, 0, 0.5);
+}
+.blueButton_Filter{
+    background: linear-gradient(to bottom, #63b8f3 10%, #1292d3 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    border: 1px solid #333333;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 90%;
+    font-weight: bold;
+    margin: -40px 10px !important ;
+    padding: 0 10px;
+    text-shadow: 2px -1px rgba(0, 0, 0, 0.5);
 }
 
 .form_submit_line {
@@ -178,12 +216,10 @@
 }
 
 .TitledForm .title {
-  display: table-row;
   background-color: #1292d3;
   color: white;
   width: 100%;
   height: 45px; line-height: 45px;
-  border: 1px solid #333;
   padding: 0;
   text-shadow: 1px 2px 2px #333333, 2px 2px 2px #333333;
   width: auto;
@@ -191,6 +227,7 @@
   z-index: 999;
   border-collapse: collapse;
   content: "";
+    border-radius: 10px 10px 0 0;
 }
 
 .TitledForm .title span {
@@ -214,11 +251,14 @@
 .TitledForm .content div * {
   display: table-cell;
   float: left; clear: none;
-  padding: 0; margin: 0;
+  padding: 0; margin: 0 10px;
 }
 
 .TitledForm .content div button, .TitledForm .content div input[type='submit'], .TitledForm .content div input[type='button']  {
-  margin-right: 5px !important;
+    border: 1px solid #808080;
+    margin-right: 5px !important;
+    padding: 5px;
+    text-shadow: 1px 1px #808080;
 }
 
 .titled-form-row {
@@ -234,7 +274,9 @@
   text-align: right;
 }
 .titled-form-row input[type='text'], .titled-form-row input[type='password'] {
-  width: 200px;
+    border: 1px solid #808080;
+    height: 18px;
+    width: 200px;
 }
 .titled-form-row input[type='submit'], .titled-form-row input[type='button'] {
   margin: 0 0 0 10px;
