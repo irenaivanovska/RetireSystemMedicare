@@ -24,10 +24,10 @@ echo '<div id="PlanListByZip">';
 					echo '<div><b>Montly premium</b></div>';
 				echo '</div>';
 				echo '<div class="PlanItemMenu">';
-					echo $this->Form->submit('Contact', array('type' => 'submit', 'class' => 'prettyButton'));
-					echo $this->Form->submit('Add to favorites', array('type' => 'submit', 'class' => 'prettyButton'));
-					echo $this->Form->submit('Plan Details', array('type' => 'submit', 'class' => 'prettyButton'));
-					echo $this->Form->submit('Compare', array('type' => 'submit', 'class' => 'prettyButton'));
+					echo $this->Form->submit('Contact', array('type' => 'submit', 'class' => 'prettyButton', 'value' => 'contactPlan'));
+					echo $this->Form->submit('Add to favorites', array('type' => 'submit', 'class' => 'blueButton', 'value' => 'addPlanToFavorites'));
+					echo $this->Form->submit('Plan Details', array('type' => 'submit', 'class' => 'blueButton', 'value' => 'planDetails'));
+					echo $this->Form->submit('Compare', array('type' => 'submit', 'class' => 'prettyButton', 'value' => 'comparePlans'));
 				echo '</div>';	
 			echo $this->Ace->end();
 		}

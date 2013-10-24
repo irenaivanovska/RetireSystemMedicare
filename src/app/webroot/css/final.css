@@ -65,7 +65,7 @@
   font-size: 90%;
   font-weight: bold;
   margin: 0 10px;
-  padding: 0 10px;
+  padding: 2px 0 2px 10px;
   text-shadow: 2px -1px rgba(0, 0, 0, 0.5);
 }
 
@@ -73,6 +73,19 @@
   background: none repeat scroll 0% 0% #e8c418;
   font-size: 90%;
   font-weight: bold;
+}
+
+.blueButton {
+  background: linear-gradient(to bottom, #63b8f3 10%, #1292d3 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+  border: 1px solid #333333;
+  border-radius: 5px 5px 5px 5px;
+  color: #FFFFFF;
+  font-family: Arial;
+  font-size: 90%;
+  font-weight: bold;
+  margin: 0 10px;
+  padding: 0 10px;
+  text-shadow: 2px -1px rgba(0, 0, 0, 0.5);
 }
 
 .form_submit_line {
