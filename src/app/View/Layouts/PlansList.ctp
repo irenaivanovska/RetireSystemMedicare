@@ -12,7 +12,8 @@
     <?php echo $this-> Html -> css ('cake.generic') ?>
     <?php echo $this-> Html -> css ('retiree.style')?>
     <?php echo $this-> Html -> css ('styles')?>
-
+    <?php echo $this-> Html -> css ('final')?>
+    <?php echo $this-> Html -> css ('style')?>
 </head>
 <body>
 <div id="header">
@@ -32,22 +33,32 @@
         <li class='last'><?php echo $this->Html->link('Log In', array('controller' => 'users', 'action'=>'login'))?></li>
     </ul>
 </div>
-<div id="containerFAQ">
+<div id="containerPlans">
     <div id="sidebar">
-        <div style="background:#414143; width:100%;padding: 20px; border-radius: 10px 0 0 0;"><span style="color:#ff8c00; font-weight: bold; font-size: 20px;">FIND ANSWERS <br/>
-        QUICKLY ! -</span><br/><br/>
-        <span style="color: #ffffff; font-size: 18px; font-weight: bold;">Click a category below.</span>
+        <div class="gray_header"><span style="color:#ff8c00; font-weight: bold; font-size: 20px;">MY ACCOUNT</span><br/><br/>
+            <p class="gray_header_p">My Contact Info</p>
+            <p class="gray_header_p">My Drug List</p>
+            <p class="gray_header_p">My Favorites Plans</p>
+            <p class="gray_header_p">My Appointments</p>
         </div>
         <div id='cssmenu_v'>
-            <ul>
-                <li class='active'><a href='index.html'><span>First Question Category</span></a></li>
-                <li><a href='#'><span>Second Question Category</span></a></li>
-                <li><a href='#'><span>Third Question Category</span></a></li>
-                <li class='last'><a href='#'><span>Fourth Question Category</span></a></li>
-            </ul>
+            <div class="gray_block">
+             <h1>QUESTIONS ?</h1>
+             <p>Contact a Licenced Agent</p>
+              <p>800-922-1276</p>
+              <p>Mon - Fri, 9am - 6pm</p>
+            </div>
+            <div class="gray_block">
+            <h1>RESOURCES</h1>
+                <p class="p1">VIsit Our Full FAQ Page</p><br/>
+                <p class="bold">Most Commonly Asked Questions:</p><br/>
+                <p class="p1">Question #1</p>
+                <p class="p1">Question #2</p>
+                <p class="p1">Question #3</p>
+            </div>
         </div>
     </div>
-    <div id="contentFAQ">
+    <div id="contentPlans">
         <?php echo $this-> fetch('content') ?>
     </div>
     <div id="footer">

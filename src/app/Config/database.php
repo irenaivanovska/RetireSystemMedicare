@@ -66,7 +66,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => '127.0.0.1',
 		'login' => 'root',
-		'password' => 'gospod354',
+		'password' => '',
 		'database' => 'retireesupportcenter',
 		'prefix' => '',
 		//'encoding' => 'utf8',

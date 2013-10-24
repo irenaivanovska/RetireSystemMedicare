@@ -1,5 +1,5 @@
 <?php
-echo '<table style="border: 1px solid blue" border="1px">';
+echo '<table>';
 	if (count($drug_item) > 0) {
 		$data =& $drug_item[0]['Drugs'];
 	} else {

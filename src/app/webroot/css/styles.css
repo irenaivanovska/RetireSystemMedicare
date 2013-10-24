@@ -2,7 +2,7 @@
 #cssmenu_v {
     background: none repeat scroll 0 0 #BFBFBF;
     list-style: none outside none;
-    border: 1px solid #000000;
+    border: 1px solid #333;
     margin: 0;
     padding: 0;
     width: 119%;
@@ -33,4 +33,36 @@
     background: url("../img/hover.gif") no-repeat scroll left center #1292D3;
     color: #FFFFFF;
     padding-bottom: 8px;
+}
+
+#cssmenu_v h1 {
+    font-size: 22px;
+    color: #1292D3;
+    font-weight: bold;
+    background: none repeat scroll 0 0 #BFBFBF;
+    padding: 20px 0 0 20px;
+}
+#cssmenu_v p {
+    font-size: 12px;
+    color: #454545;
+    font-weight: normal;
+    background: none repeat scroll 0 0 #BFBFBF;
+    padding: 0 0 10px 20px;
+}
+#cssmenu_v .p1 {
+    font-size: 12px;
+    color: #454545;
+    font-weight: normal;
+    background: none repeat scroll 0 0 #BFBFBF;
+    padding: 0 0 10px 20px;
+    text-decoration: underline;
+}
+
+#cssmenu_v .bold{
+    font-size: 14px;
+    color: #454545;
+    font-weight: normal;
+    background: none repeat scroll 0 0 #BFBFBF;
+    padding: 0 0 10px 20px;
+    font-weight: bold;
 }
