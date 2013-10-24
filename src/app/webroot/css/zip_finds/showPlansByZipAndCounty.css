@@ -47,7 +47,7 @@
   text-align: left;
 }
 
-.PlanListForm .content div {
+.PlanListForm .content div div {
   display: table;
   float: left; clear: both; 
   width: 100%;
@@ -63,4 +63,16 @@
 
 .PlanListForm .content div button, .PlanListForm .content div input[type='submit'], .PlanListForm .content div input[type='button']  {
   margin-right: 5px !important;
+}
+
+.PlanFindItem {
+  float: left;
+  clear: none;
+  width: 70%;
+}
+
+.PlanItemMenu {
+  float: right;
+  clear: none;
+  width: 100px;
 }
