@@ -3,7 +3,7 @@ echo '<div id="PlanListByZip">';
 	echo '<div id="MatchingPlansReport">';
 		echo '<span>Matching Plans</span>';
     echo '</div>';
-    echo $this->Form->submit('Filter Plans', array('type' => 'submit', 'class' => 'blueButton_Filter', 'value' => 'FilterPlans'));
+echo $this->Form->submit('Filter Plans', array('type' => 'submit', 'class' => 'blueButton_Filter', 'value' => 'FilterPlans'));
 	if (isset($planFinds)) {
 		foreach ($planFinds as $planItem) {
 			$plan =& $planItem['ZipFind'];
@@ -26,19 +26,9 @@ echo '<div id="PlanListByZip">';
 				echo '</div>';
 				echo '<div class="PlanItemMenu">';
 					echo $this->Form->submit('Contact', array('type' => 'submit', 'class' => 'prettyButton', 'value' => 'contactPlan'));
-<<<<<<< HEAD
-					echo $this->Html->link('Add to favorites', array('controller' => 'ZipFinds', 'action' => 'addToFavorites', $plan_id, 'full_base' => true), array('class' => 'blueButton_favorites')); //echo $this->Form->submit('Add to favorites', array('type' => 'submit', 'class' => 'blueButton', 'value' => 'addPlanToFavorites'));
-=======
 					echo $this->Html->link('Add to favorites', array('controller' => 'ZipFinds', 'action' => 'addToFavorites', $plan_id, 'full_base' => true, 'class' => 'blueButton')); //echo $this->Form->submit('Add to favorites', array('type' => 'submit', 'class' => 'blueButton', 'value' => 'addPlanToFavorites'));
->>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
 					echo $this->Form->submit('Plan Details', array('type' => 'submit', 'class' => 'blueButton', 'value' => 'planDetails'));
-                    echo $this->Form->input('ZipFinds', array(
-                                            'type' => 'checkbox',
-                                            'label'=> '',
-                                            'class' =>'checkButton'
-                                            )
-                    );
-            echo $this->Form->submit('Compare', array('type' => 'submit', 'class' => 'prettyButtonCmp', 'value' => 'comparePlans'));
+					echo $this->Form->submit('Compare', array('type' => 'submit', 'class' => 'prettyButton', 'value' => 'comparePlans'));
 				echo '</div>';	
 			echo $this->Ace->end();
 		}
