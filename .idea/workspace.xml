@@ -25,10 +25,42 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="show_plans_by_zip_and_county.ctp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/View/ZipFinds/show_plans_by_zip_and_county.ctp">
           <provider selected="true" editor-type-id="text-editor">
             <state line="5" column="70" selection-start="206" selection-end="206" vertical-scroll-proportion="0.15355086">
+=======
+      <file leaf-file-name="PlansList.ctp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/View/Layouts/PlansList.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="6" selection-start="1071" selection-end="1071" vertical-scroll-proportion="5.76">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#3;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#3;n#tr#2;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#3;n#tr#3;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_plans_by_zip_and_county.ctp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/View/ZipFinds/show_plans_by_zip_and_county.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="30" selection-start="1410" selection-end="1410" vertical-scroll-proportion="0.61420345">
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
               <folding />
             </state>
           </provider>
@@ -372,12 +404,16 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.externalResources" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
+=======
+    <property name="recentsLimit" value="5" />
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="options.searchVisible" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -474,7 +510,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.059848484" sideWeight="0.67147434" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25378788" sideWeight="0.4375" order="1" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28863636" sideWeight="0.8082192" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.275" sideWeight="0.8082192" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19178082" sideWeight="0.4939394" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25378788" sideWeight="0.3301282" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19178082" sideWeight="0.5007576" order="7" side_tool="true" content_ui="tabs" />
@@ -546,100 +586,198 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/app/webroot/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="55" column="47" selection-start="1290" selection-end="1290" vertical-scroll-proportion="-10.32" />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.82917464">
+          <folding />
+        </state>
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/webroot/css/cake.generic.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="204" column="13" selection-start="3686" selection-end="3686" vertical-scroll-proportion="0.76199615" />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/webroot/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.04681648" />
+=======
+        <state line="18" column="30" selection-start="502" selection-end="528" vertical-scroll-proportion="-5.76">
+          <folding />
+        </state>
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/webroot/css/retiree.style.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="49" column="15" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.4165067" />
+=======
+        <state line="5" column="14" selection-start="198" selection-end="198" vertical-scroll-proportion="0.14981273">
+          <folding />
+        </state>
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="29" column="28" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.23970038" />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1382560790000" expanded="true" signature="4245:4339" placeholder="..." />
+            <marker date="1382560790000" expanded="true" signature="4261:4328" placeholder="{&quot;mode&quot;: &quot;exact&quot;...}" />
+            <marker date="1382560790000" expanded="true" signature="6455:6549" placeholder="..." />
+            <marker date="1382560790000" expanded="true" signature="6471:6538" placeholder="{&quot;mode&quot;: &quot;exact&quot;...}" />
+          </folding>
+        </state>
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Config/database.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="68" column="23" selection-start="2723" selection-end="2723" vertical-scroll-proportion="0.29366603" />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/ZipFinds/add_to_favorites.ctp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+=======
+        <state line="13" column="41" selection-start="0" selection-end="3813" vertical-scroll-proportion="-8.32">
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Layouts/PlansList.ctp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="14" column="46" selection-start="843" selection-end="843" vertical-scroll-proportion="-1.7024952">
+=======
+        <state line="55" column="47" selection-start="1290" selection-end="1290" vertical-scroll-proportion="-10.32">
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/webroot/css/final.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="96" column="0" selection-start="2292" selection-end="2292" vertical-scroll-proportion="0.54702497">
+=======
+        <state line="4" column="32" selection-start="148" selection-end="148" vertical-scroll-proportion="0.11985019">
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Layouts/ZipFindsLayout.ctp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="4" column="32" selection-start="148" selection-end="148" vertical-scroll-proportion="0.11985019">
+=======
+        <state line="73" column="41" selection-start="2338" selection-end="2338" vertical-scroll-proportion="-12.72">
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Home/index.ctp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+=======
+        <state line="204" column="13" selection-start="3686" selection-end="3686" vertical-scroll-proportion="0.76199615">
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Controller/ZipFindsController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="23" column="37" selection-start="856" selection-end="856" vertical-scroll-proportion="-1.6410749">
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.04681648">
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Drugs/enter_drugs.ctp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
+=======
+        <state line="21" column="6" selection-start="1071" selection-end="1071" vertical-scroll-proportion="5.76">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#2;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#3;n#tbody#0;n#table#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Elements/enter_drugs.ctp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+=======
+        <state line="49" column="15" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.4165067">
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Elements/zip_find.ctp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="7" column="48" selection-start="122" selection-end="405" vertical-scroll-proportion="0.20973782">
+=======
+        <state line="244" column="7" selection-start="5498" selection-end="5503" vertical-scroll-proportion="0.4856046">
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/ZipFinds/show_plans_by_zip_and_county.ctp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="5" column="70" selection-start="206" selection-end="206" vertical-scroll-proportion="0.15355086">
+=======
+        <state line="26" column="30" selection-start="1410" selection-end="1410" vertical-scroll-proportion="0.61420345">
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
           <folding />
         </state>
       </provider>

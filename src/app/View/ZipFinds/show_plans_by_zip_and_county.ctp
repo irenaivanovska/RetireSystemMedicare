@@ -26,7 +26,11 @@ echo '<div id="PlanListByZip">';
 				echo '</div>';
 				echo '<div class="PlanItemMenu">';
 					echo $this->Form->submit('Contact', array('type' => 'submit', 'class' => 'prettyButton', 'value' => 'contactPlan'));
+<<<<<<< HEAD
 					echo $this->Html->link('Add to favorites', array('controller' => 'ZipFinds', 'action' => 'addToFavorites', $plan_id, 'full_base' => true), array('class' => 'blueButton_favorites')); //echo $this->Form->submit('Add to favorites', array('type' => 'submit', 'class' => 'blueButton', 'value' => 'addPlanToFavorites'));
+=======
+					echo $this->Html->link('Add to favorites', array('controller' => 'ZipFinds', 'action' => 'addToFavorites', $plan_id, 'full_base' => true, 'class' => 'blueButton')); //echo $this->Form->submit('Add to favorites', array('type' => 'submit', 'class' => 'blueButton', 'value' => 'addPlanToFavorites'));
+>>>>>>> 5d6c1c2b619165c62b60c4edfa2f8a66a1a36e48
 					echo $this->Form->submit('Plan Details', array('type' => 'submit', 'class' => 'blueButton', 'value' => 'planDetails'));
                     echo $this->Form->input('ZipFinds', array(
                                             'type' => 'checkbox',
