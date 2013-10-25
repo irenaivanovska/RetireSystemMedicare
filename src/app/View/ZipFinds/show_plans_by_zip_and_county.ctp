@@ -16,7 +16,6 @@ echo $this->Form->submit('Filter Plans', array('type' => 'submit', 'class' => 'b
 			    echo '<td>' . $plan['zip_code'] . '</td>';			    
 				echo '<td>' . $plan['county_name'] . '</td>';
 				echo '<td>' . $plan['state_name'] . '</td>';
-				echo '<td>' . $this->Html->link('Add to favorites', array('controller' => 'ZipFinds', 'action' => 'addToFavorites', $plan_id, 'full_base' => true)) . '</td>';
 			echo '</tr>';*/
 			echo $this->Ace->create('ZipFinds', $plan['name'], array('action' => 'commandAction', 'id' => 'PlanListForm'));
 				echo '<div class="PlanFindItem">';
@@ -27,7 +26,7 @@ echo $this->Form->submit('Filter Plans', array('type' => 'submit', 'class' => 'b
 				echo '</div>';
 				echo '<div class="PlanItemMenu">';
 					echo $this->Form->submit('Contact', array('type' => 'submit', 'class' => 'prettyButton', 'value' => 'contactPlan'));
-					echo $this->Form->submit('Add to favorites', array('type' => 'submit', 'class' => 'blueButton', 'value' => 'addPlanToFavorites'));
+					echo $this->Html->link('Add to favorites', array('controller' => 'ZipFinds', 'action' => 'addToFavorites', $plan_id, 'full_base' => true, 'class' => 'blueButton')); //echo $this->Form->submit('Add to favorites', array('type' => 'submit', 'class' => 'blueButton', 'value' => 'addPlanToFavorites'));
 					echo $this->Form->submit('Plan Details', array('type' => 'submit', 'class' => 'blueButton', 'value' => 'planDetails'));
 					echo $this->Form->submit('Compare', array('type' => 'submit', 'class' => 'prettyButton', 'value' => 'comparePlans'));
 				echo '</div>';	
