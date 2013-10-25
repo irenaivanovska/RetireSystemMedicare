@@ -4,7 +4,7 @@ class DrugsController extends AppController {
   public $useTable = 'drugs';
   public $helpers = array('Html','Form','Ace');
   
-  public $components = array('Paginator');
+  public $components = array('Paginator', 'Favorites');
   
   public $paginate = array(
       //'fields' => array('Post.id', 'Post.created'),
@@ -96,6 +96,23 @@ class DrugsController extends AppController {
     ));
     
     $this->set('drug_item', $drug_item);
+  }
+  
+  public function addToFavorites() {
+    $this->checkAjax();
+    
+    $drug_id = (int)$this->params['pass'][0];
+    $message = '';
+    if ($drug_id > 0) {
+      if ($this->Favorites->add('Drugs.Favorites', $this->loadModel('FavoriteDrugs'), 'drug_id', $drug_id, 'user_id')) {
+        $message = 'Successfully added to favorites.';
+      } else {
+        $message = 'Failed to add to favorites.';
+      }
+    } else {
+      $message = 'Invalid input parameter.';
+    }
+    $this->set('message', $message);
   }
   
 }

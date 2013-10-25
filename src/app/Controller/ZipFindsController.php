@@ -3,13 +3,14 @@ class ZipFindsController extends AppController{
   public $name = 'ZipFinds';
   public $useTable = 'plans'; //'vwplansbyzipnew_local';
   public $helpers = array('Html','Form');
+  public $components = array('Favorites');
 
   public function index(){
     if (!empty($this->data)) {
       $this->redirect(array('controller'=>'ZipFinds','action'=>'view', urlencode($this->data['query'])));
     }
   }
-  
+
   public function view(){
     $isAjax = ($this->request->is('ajax')) ? true : false;
     if ($isAjax) {
@@ -22,14 +23,14 @@ class ZipFindsController extends AppController{
     );
     $this->set('zipFinds',$zipFinds);
   }
-  
+
   public function showPlansByZipAndCounty() {
-    $this->loadModel('FAQ');
+    $this->loadModel('PlanList');
     $isAjax = ($this->request->is('ajax')) ? true : false;
     if ($isAjax) {
       $this->layout = 'ajax';
     }
-    
+
     $zip_code = '';
     $request =& $this->request;
     $post = null;
@@ -44,7 +45,7 @@ class ZipFindsController extends AppController{
       }
       $filter['ZipFind.zip_code'] = $zip_code;
     }
-    
+
     $options = array(
         'fields' => array('ZipFind.plan_id', 'ZipFind.county_name','ZipFind.zip','ZipFind.zip_code','ZipFind.county_name', 'ZipFind.state_name', 'ZipFind.name', 'ZipFind.web_addr', 'ZipFind.textcond', 'ZipFind.description'),
         'limit' => 10
@@ -52,44 +53,47 @@ class ZipFindsController extends AppController{
     if (count($filter) > 0) {
       $options['conditions'] = $filter;
     }
-    
+
     $this->ZipFind->recursive = 0;
     $planFinds = $this->ZipFind->find('all', $options);
     $this->set('planFinds',$planFinds);
-    
+
     $this->layout ='PlansList';
   }
-  public function commandAction (){
+  
+  public function commandAction() {
 
   }
+  
+  protected function checkAjax() {
+    $isAjax = ($this->request->is('ajax')) ? true : false;
+    if ($isAjax) {
+      $this->layout = 'ajax';
+    }
+    return $isAjax;
+  }
+  
   public function addToFavorites() {
+    $this->checkAjax();
+    
     $plan_id = (int)$this->params['pass'][0];
     $message = '';
     if ($plan_id > 0) {
-      $user = $this->Auth->User();
-      if ($user) {
-        $message = 'loggedin';
+      if ($this->Favorites->add('Plans.Favorites', $this->loadModel('FavoritePlans'), 'plan_id', $plan_id, 'user_id')) {
+        $message = 'Successfully added to favorites.';
       } else {
-        $name = 'Plans.Favorites';
-        if ($this->Session->check($name)) {
-            $this->Session->write($name, am(
-               $this->Session->read($name),
-               array($plan_id)
-            ));
-        } else {
-            $this->Session->write($name, array($plan_id));
-        }
+        $message = 'Failed to add to favorites.';
       }
+    } else {
+      $message = 'Invalid input parameter.';
     }
-    $this->set('message', $this->Session->read($name));
+    $this->set('message', $message);
   }
-  
 
   function search() {
 
-
   }
-  
+
   public function beforeFilter() {
     parent::beforeFilter();
     $this->Auth->allow('view', 'index', 'search', 'showPlansByZipAndCounty', 'addToFavorites');

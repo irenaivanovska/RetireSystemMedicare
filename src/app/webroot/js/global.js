@@ -51,7 +51,7 @@ $(function() {
       $("#tblCountries").html(aData);
       $("#dialog").dialog("open");
     });
-  });
+  }); 
   
   
 });
