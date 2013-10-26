@@ -6,7 +6,7 @@
     </title><?php
     echo $this->Html->css('/js/jquery-ui/themes/base/jquery-ui.css');
 
-    $javascript_options = array(/*'type' => 'text/javascript'*/);
+    $javascript_options = array();
 
     echo $this->Html->script('/js/jquery.js', $javascript_options);
     echo $this->Html->script('/js/jquery-ui/ui/jquery-ui.js', $javascript_options);
@@ -20,11 +20,23 @@
     echo $this->Html->script('/js/jquery-ui/ui/jquery.ui.dialog.js', $javascript_options);
 
     echo $this->Html->script('/js/global.js', $javascript_options);
+    
+    $js = $this->Html->toUrlJS('layouts' . DS . $this->layout); //layout css
+    if (is_file($this->Html->toPathWWW($js))) {
+    	echo $this->Html->script($js);
+    }
+    
+    $js = $this->Html->toUrlJS(Inflector::underscore($this->Html->getCurrentController()) . DS . Inflector::underscore($this->Html->getCurrentAction())); //css by controller and action
+    if (is_file($this->Html->toPathWWW($js))) {
+    	echo $this->Html->script($js);
+    }
 
 
     echo $this->Html->css('cake.generic');
     echo $this->Html->css('retiree.style');
+    echo $this->Html->css('styles');
     echo $this->Html->css('final'); //IMPORTANT this css should be the last added css, in order to override css layouts
+    echo $this->Html->css('style');
     
     if (isset($css_list)) {
     	foreach($css_list as $item) {
@@ -33,8 +45,13 @@
     	}
     }
     
-    $css = $this->Html->toUrlCSS($this->Html->getCurrentController() . DS . $this->Html->getCurrentAction());
-    if (is_file($this->Html->toPathCSS($css))) {
+    $css = $this->Html->toUrlCSS('layouts' . DS . $this->layout); //layout css
+    if (is_file($this->Html->toPathWWW($css))) {
+    	echo $this->Html->css($css);
+    }
+    
+    $css = $this->Html->toUrlCSS(Inflector::underscore($this->Html->getCurrentController()) . DS . Inflector::underscore($this->Html->getCurrentAction())); //css by controller and action
+    if (is_file($this->Html->toPathWWW($css))) {
     	echo $this->Html->css($css);
     }
     ?>

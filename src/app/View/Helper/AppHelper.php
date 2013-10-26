@@ -40,8 +40,16 @@ class AppHelper extends Helper {
     return $this->toUrl($filename, '.css', Configure::read('App.cssBaseUrl'));
   }
   
-  public function toPathCSS($relativePathCSS) {
-    return rtrim(ROOT, DS) . DS . rtrim(APP_DIR, DS) . DS . rtrim(WEBROOT_DIR, DS) . DS . ltrim($relativePathCSS, DS);
+  public function toUrlJS($filename) {
+    return $this->toUrl($filename, '.js', Configure::read('App.jsBaseUrl'));
+  }
+  
+  public function toPathWWW($aRelativePath = '') {
+    $path = rtrim(ROOT, DS) . DS . rtrim(APP_DIR, DS) . DS . rtrim(WEBROOT_DIR, DS);
+    if ($aRelativePath > '') {
+      $path .= DS . ltrim($aRelativePath, DS);
+    }
+    return $path; 
   }
   
   public function getCurrentController() {

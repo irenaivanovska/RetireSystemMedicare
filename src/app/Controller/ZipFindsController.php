@@ -46,17 +46,25 @@ class ZipFindsController extends AppController{
       $filter['ZipFind.zip_code'] = $zip_code;
     }
 
+    $rows_per_page = 10;
     $options = array(
         'fields' => array('ZipFind.plan_id', 'ZipFind.county_name','ZipFind.zip','ZipFind.zip_code','ZipFind.county_name', 'ZipFind.state_name', 'ZipFind.name', 'ZipFind.web_addr', 'ZipFind.textcond', 'ZipFind.description'),
-        'limit' => 10
     );
     if (count($filter) > 0) {
       $options['conditions'] = $filter;
     }
+    
+    $countAll = $this->ZipFind->find('count', $options);
+    $options = array_merge($options, array('limit' => $rows_per_page));
+    $count = $this->ZipFind->find('count', $options);
 
     $this->ZipFind->recursive = 0;
     $planFinds = $this->ZipFind->find('all', $options);
+    
     $this->set('planFinds',$planFinds);
+    $this->set('countAll', $countAll);
+    $this->set('count', $count);
+    $this->set('rows_per_page', $rows_per_page);
 
     $this->layout ='PlansList';
   }
@@ -96,7 +104,7 @@ class ZipFindsController extends AppController{
 
   public function beforeFilter() {
     parent::beforeFilter();
-    $this->Auth->allow('view', 'index', 'search', 'showPlansByZipAndCounty', 'addToFavorites');
+    $this->Auth->allow('view', 'index', 'search', 'showPlansByZipAndCounty', 'addToFavorites', 'commandAction');
   }
 
 }

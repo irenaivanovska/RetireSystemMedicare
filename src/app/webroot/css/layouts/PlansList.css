@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+#contentPlans {
+  background: none repeat scroll 0 0 #FFFFFF;
+  color: #333333;
+  float: right;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  width: 75% !important;
+}
+
+#contentPlans h2 {
+  color: #ff8c00;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+#contentPlans p {
+  color: #0C92D1;
+  font-size: 14px;
+}

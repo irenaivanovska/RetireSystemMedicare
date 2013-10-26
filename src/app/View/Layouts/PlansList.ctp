@@ -1,21 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>
-        <?php echo $title_for_layout; ?>
-    </title>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css" />
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-    <?php echo $this-> Html -> css ('cake.generic') ?>
-    <?php echo $this-> Html -> css ('retiree.style')?>
-    <?php echo $this-> Html -> css ('styles')?>
-    <?php echo $this-> Html -> css ('final')?>
-    <?php echo $this-> Html -> css ('style')?>
-</head>
-<body>
+<?php echo $this->element('header'); ?>
 <div id="header">
     <h1>Retiree Support Center </h1>
     <div style="width:38%; text-align: right; color:black; font-size:60%;">brought to you by SGIA</div>
@@ -92,5 +75,4 @@
         </table>
     </div>
 </div>
-</body>
-</html>
+<?php echo $this->element('footer'); ?>
