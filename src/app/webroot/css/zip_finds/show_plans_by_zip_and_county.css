@@ -157,3 +157,48 @@
    margin: 0;
    padding: 0;
 }
+
+#FilterPlansOptions, #FilterPlansButtons {
+  display: table;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  float: left;
+  clear: both;
+  width: 100%;
+}
+#FilterPlansOptions > div {
+  display: table-row;
+  float: left;
+  clear: none;
+  padding: 0;
+  margin: 0;
+}
+#FilterPlansOptions > div > .title, #FilterPlansOptions > div > .options {
+  display: block;
+  float: left;
+  clear: both;
+  margin: 0 0 2px 0;
+  padding: 0;
+  min-width: 200px;
+}
+
+#FilterPlansOptions .title {
+  color: #1790d7
+}
+
+.FilterForm {
+  width: auto;
+}
+
+#FilterPlansButtons > * {
+  float: right;
+  clear: none;
+  font-size: 80%;
+  font-weight: bold;
+  text-shadow: none;
+  padding: 4px 10px 4px 10px;
+  width: auto; height: auto;
+}

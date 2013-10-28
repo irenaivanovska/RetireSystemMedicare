@@ -1,6 +1,9 @@
-source pharmacy_type.sql
-source drugs.sql
-source plans.sql
+source pharmacy_type.sql;
+source drugs.sql;
+source plan_types.sql;
+source carriers.sql;
+source plans.sql;
+
 	
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -813,37 +816,6 @@ CREATE TABLE `vwplansbystate_local` (
   `last_mod` text,
   PRIMARY KEY (`planbystate_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table vwplansbyzipnew_local
-# ------------------------------------------------------------
-
-CREATE TABLE `vwplansbyzipnew_local` (
-  `palnbyzipnew_id` int(11) NOT NULL AUTO_INCREMENT,
-  `zip_code` varchar(5) DEFAULT NULL,
-  `county_name` text,
-  `state_name` text,
-  `name` text,
-  `addrs1` text,
-  `city` text,
-  `abbrev` text,
-  `zip` text,
-  `web_addr` text,
-  `textcond` text,
-  `sp_textcond` text,
-  `description` text,
-  `over65` smallint(5) DEFAULT NULL,
-  `under65` smallint(5) DEFAULT NULL,
-  `na_available` smallint(5) DEFAULT NULL,
-  `community` smallint(5) DEFAULT NULL,
-  `issue` smallint(5) DEFAULT NULL,
-  `attained` smallint(5) DEFAULT NULL,
-  `na_rating` smallint(5) DEFAULT NULL,
-  `last_mod` text,
-  PRIMARY KEY (`palnbyzipnew_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24283 DEFAULT CHARSET=utf8;
-
 
 
 # Dump of table vwplanservices

@@ -4,6 +4,45 @@ class ZipFindsController extends AppController{
   public $useTable = 'plans'; //'vwplansbyzipnew_local';
   public $helpers = array('Html','Form');
   public $components = array('Favorites');
+  
+  protected $filter_by_options = array(
+    'montly_premium' => array (
+        0 => '$0 (No premium)',
+        1 => 'Under $50',
+        2 => '$50-$100',
+        3 => '$100-$200',
+        4 => '$200 & Above' 
+    ),
+    'plan_type' => array(),
+    'carrier' => array()
+  );
+  
+  protected function loadFilterOptions() {
+    $this->loadModel('PlanTypes');
+    $this->loadModel('Carriers');
+    
+    $plan_types_data = $this->PlanTypes->find('all', array(
+       'fields' => array('PlanTypes.plan_type_id', 'PlanTypes.short_desc'),
+       'order' => array('PlanTypes.short_desc')
+    ));
+    $list_plan_types = array();
+    foreach ($plan_types_data as $data) {
+      $record =& $data['PlanTypes'];
+      $list_plan_types[$record['plan_type_id']] = $record['short_desc'];
+    }
+    $this->filter_by_options['plan_type'] =& $list_plan_types;
+    
+    $carriers_data = $this->Carriers->find('all', array(
+        'fields' => array('Carriers.carrier_id', 'Carriers.name'),
+        'order' => array('Carriers.name')
+    ));
+    $list_carriers = array();
+    foreach ($carriers_data as $data) {
+      $record =& $data['Carriers'];
+      $list_carriers[$record['carrier_id']] = $record['name'];
+    }
+    $this->filter_by_options['carrier'] =& $list_carriers;
+  }
 
   public function index(){
     if (!empty($this->data)) {
@@ -43,12 +82,12 @@ class ZipFindsController extends AppController{
         $post =& $request->data['ZipFind'];
         $zip_code = $post['query'];
       }
-      $filter['ZipFind.zip_code'] = $zip_code;
+      if ($zip_code > '') $filter['ZipFind.zip_code'] = $zip_code;
     }
 
     $rows_per_page = 10;
     $options = array(
-        'fields' => array('ZipFind.plan_id', 'ZipFind.county_name','ZipFind.zip','ZipFind.zip_code','ZipFind.county_name', 'ZipFind.state_name', 'ZipFind.name', 'ZipFind.web_addr', 'ZipFind.textcond', 'ZipFind.description'),
+        'fields' => array('ZipFind.plan_id', 'ZipFind.county_name','ZipFind.zip','ZipFind.zip_code','ZipFind.county_name', 'ZipFind.state_name', 'ZipFind.name', 'ZipFind.web_addr', 'ZipFind.textcond', 'ZipFind.description', 'ZipFind.na_rating'),
     );
     if (count($filter) > 0) {
       $options['conditions'] = $filter;
@@ -65,6 +104,9 @@ class ZipFindsController extends AppController{
     $this->set('countAll', $countAll);
     $this->set('count', $count);
     $this->set('rows_per_page', $rows_per_page);
+    
+    $this->loadFilterOptions();
+    $this->set('filter_by_options', $this->filter_by_options);
 
     $this->layout ='PlansList';
   }

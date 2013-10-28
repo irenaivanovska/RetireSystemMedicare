@@ -2,7 +2,7 @@
 echo '<div id="PlanListByZip">';
 	echo '<div id="MatchingPlansReport">';
 		echo '<span class="title">'. $count . ' Matching Plans</span>';
-		echo $this->Form->button('Filter Plans', array('type' => 'button', 'class' => 'blueButton_Filter', 'value' => 'FilterPlans', 'div' => true));
+		echo $this->Form->button('Filter Plans', array('id' => 'btnFilterPlans', 'type' => 'button', 'class' => 'blueButton_Filter', 'value' => 'FilterPlans', 'div' => true));
 		echo '<span class="rows_per_page">Showing ' . $rows_per_page . ' of ' . $count . ' Plans</span>';
     echo '</div>';
 
@@ -19,6 +19,8 @@ echo '<div id="PlanListByZip">';
 				echo '<td>' . $plan['county_name'] . '</td>';
 				echo '<td>' . $plan['state_name'] . '</td>';
 			echo '</tr>';*/
+			
+			$na_rating = (int)$plan['na_rating'];
 			$title = '<div class="stars">';
 			for($index=0; $index < 5; $index++) {
 				$title .= '<div></div>';	
@@ -44,5 +46,56 @@ echo '<div id="PlanListByZip">';
 echo '</div>';
 echo '<div id="AceDialog" title="Information">';
 	echo '<div id="AceDialogContent"></div>';
+echo '</div>';
+
+echo '<div id="FilterPlansDialog" title="Filter Plans">';
+	echo '<div id="FilterPlansContent">';
+		if (isset($filter_by_options)) {
+		  	echo $this->Form->create('ZipFinds', array('action' => 'filter', 'class' => 'FilterForm'));
+				echo '<div id="FilterPlansOptions">';
+					echo '<div class="options">';
+						echo '<div class="title">Montly Premium</div>';
+						$list_montly_premium =& $filter_by_options['montly_premium'];
+						if (is_array($list_montly_premium)) {
+							foreach($list_montly_premium as $id => $caption) {
+								echo '<div class="options">';
+									echo $this->Form->input($caption, array('name' => 'montly_premium', 'type' => 'checkbox', 'value' => $id, 'div' => false));
+								echo '</div>';
+							}						 
+						}
+					echo '</div>';
+					
+					echo '<div class="options">';
+						echo '<div class="title">Plan Type</div>';
+						$list_plan_type =& $filter_by_options['plan_type'];
+						if (is_array($list_plan_type)) {
+							foreach($list_plan_type as $id => $caption) {
+								echo '<div class="options">';
+									echo $this->Form->input($caption, array('name' => 'plan_type', 'type' => 'checkbox', 'value' => $id, 'div' => false));
+								echo '</div>';
+							}
+						}
+					echo '</div>';
+					
+					echo '<div class="options">';
+						echo '<div class="title">Company</div>';
+						echo '<div class="options">';
+							echo $this->Form->input('All Carriers', array('name' => 'carriers', 'type' => 'checkbox', 'value' => '', 'div' => false));
+							$list_carriers =& $filter_by_options['carrier'];
+							if (is_array($list_carriers)) {
+								foreach($list_carriers as $id => $caption) {
+									echo $this->Form->input($caption, array('name' => 'carriers', 'type' => 'checkbox', 'value' => $id, 'div' => false));
+								}
+							}
+						echo '</div>';
+					echo '</div>';
+				echo '</div>';
+				echo '<div id="FilterPlansButtons">';
+					echo $this->Form->button('Update', array('type' => 'button', 'id' => 'btnUpdatePlanFilter', 'div' => false, 'class' => 'prettyButton'));
+				echo '</div>';
+				
+			echo $this->Form->end();
+		}
+	echo '</div>';
 echo '</div>';
 ?>

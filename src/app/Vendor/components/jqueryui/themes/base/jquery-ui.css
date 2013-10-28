@@ -29,9 +29,9 @@
 }
 .ui-helper-clearfix:before,
 .ui-helper-clearfix:after {
-	content: "";
+	content: none;
 	display: table;
-	border-collapse: collapse;
+	border-collapse: separate;
 }
 .ui-helper-clearfix:after {
 	clear: both;
