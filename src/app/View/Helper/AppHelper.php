@@ -33,6 +33,9 @@ App::uses('Helper', 'View');
 class AppHelper extends Helper {
   
   public function toUrl($filename, $ext, $pathPrefix) {
+    if (DS == '\\') {
+      $pathPrefix = strreplace($pathPrefix, DS, '/');
+    }
     return $this->assetUrl($filename, array('pathPrefix' => $pathPrefix, 'ext' => $ext));
   }
   
