@@ -21,14 +21,16 @@
 
     echo $this->Html->script('/js/global.js', $javascript_options);
     
-    $js = $this->Html->toUrlJS('layouts' . DS . $this->layout); //layout css
-    if (is_file($this->Html->toPathWWW($js))) {
-    	echo $this->Html->script($js);
+    $base = 'layouts' . DS . $this->layout;
+    $js_link = $this->Html->toUrlJS($base); //layout css
+    if (is_file($this->Html->toPathExtended('js', $base, '.js'))) {
+    	echo $this->Html->script($js_link);
     }
     
-    $js = $this->Html->toUrlJS(Inflector::underscore($this->Html->getCurrentController()) . DS . Inflector::underscore($this->Html->getCurrentAction())); //css by controller and action
-    if (is_file($this->Html->toPathWWW($js))) {
-    	echo $this->Html->script($js);
+    $base = Inflector::underscore($this->Html->getCurrentController()) . DS . Inflector::underscore($this->Html->getCurrentAction()); //css by controller and action
+    $js_link = $this->Html->toUrlJS($base); //layout css
+    if (is_file($this->Html->toPathExtended('js', $base, '.js'))) {
+    	echo $this->Html->script($js_link);
     }
 
 
@@ -45,14 +47,16 @@
     	}
     }
     
-    $css = $this->Html->toUrlCSS('layouts' . DS . $this->layout); //layout css
-    if (is_file($this->Html->toPathWWW($css))) {
-    	echo $this->Html->css($css);
+    $base = 'layouts' . DS . $this->layout;
+    $css_link = $this->Html->toUrlCSS($base); //layout css
+    if (is_file($this->Html->toPathExtended('css', $base, '.css'))) {
+    	echo $this->Html->css($css_link);
     }
-    
-    $css = $this->Html->toUrlCSS(Inflector::underscore($this->Html->getCurrentController()) . DS . Inflector::underscore($this->Html->getCurrentAction())); //css by controller and action
-    if (is_file($this->Html->toPathWWW($css))) {
-    	echo $this->Html->css($css);
+
+    $base = Inflector::underscore($this->Html->getCurrentController()) . DS . Inflector::underscore($this->Html->getCurrentAction());
+    $css_link = $this->Html->toUrlCSS($base); //css by controller and action
+    if (is_file($this->Html->toPathExtended('css', $base, '.css'))) {
+    	echo $this->Html->css($css_link);
     }
     ?>
 </head>

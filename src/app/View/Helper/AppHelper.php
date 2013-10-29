@@ -29,42 +29,50 @@ App::uses('Helper', 'View');
  * will inherit them.
  *
  * @package       app.View.Helper
- */
+*/
 class AppHelper extends Helper {
-  
+
   public function toUrl($filename, $ext, $pathPrefix) {
     if (DS == '\\') {
-      $pathPrefix = strreplace($pathPrefix, DS, '/');
+      $filename = str_replace('\\', '/', $filename);
     }
     return $this->assetUrl($filename, array('pathPrefix' => $pathPrefix, 'ext' => $ext));
   }
-  
+
   public function toUrlCSS($filename) {
     return $this->toUrl($filename, '.css', Configure::read('App.cssBaseUrl'));
   }
-  
+
   public function toUrlJS($filename) {
     return $this->toUrl($filename, '.js', Configure::read('App.jsBaseUrl'));
   }
-  
+
   public function toPathWWW($aRelativePath = '') {
     $path = rtrim(ROOT, DS) . DS . rtrim(APP_DIR, DS) . DS . rtrim(WEBROOT_DIR, DS);
     if ($aRelativePath > '') {
+      if (DS == '\\') {
+        $aRelativePath = str_replace('/', '\\', $aRelativePath);
+      }
       $path .= DS . ltrim($aRelativePath, DS);
     }
-    return $path; 
+    return $path;
   }
   
+  public function toPathExtended($prefix, $aRelativePath, $ext) {
+    return $this->toPathWWW($prefix . DS . ltrim($aRelativePath, DS) . $ext);
+  }
+
   public function getCurrentController() {
     return $this->params['controller'];
   }
-  
+
   public function getCurrentAction() {
     return $this->params['action'];
   }
-  
+
   public function getCurrentArgs() {
     return $this->params['pass'];
   }
-  
-}
+
+} ?>
+s
