@@ -69,8 +69,15 @@
   z-index: 999;
   border-collapse: separate;
   content: "";
-  background: linear-gradient(to bottom, #63b8f3 10%, #1292d3 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
-  text-align: left;
+  background: #258dc8 !important; /* Old browsers */
+    background: -moz-linear-gradient(top,  #258dc8 0%, #258dc8 100%) !important; /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#258dc8), color-stop(100%,#258dc8)) !important; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #258dc8 0%,#258dc8 100%)!important; /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #258dc8 0%,#258dc8 100%)!important; /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #258dc8 0%,#258dc8 100%)!important; /* IE10+ */
+    background: linear-gradient(to bottom,  #258dc8 0%,#258dc8 100%)!important; /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#258dc8',GradientType=0 )!important; /* IE6-9 */
+blueButtontext-align: left;
 }
 
 .PlanListForm .title span {
@@ -90,7 +97,7 @@
 }
 
 .PlanListForm .title .stars div {
-  background: url("/img/stars.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  background: url("../stars.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
   clear: none;
   float: left;
   height: 24px;
@@ -144,12 +151,35 @@
   padding: 0;
 }
 
+.PlanListForm .PlanItemMenu .submit .blueButton{
+background: #258dc8 !important; /* Old browsers */
+    background: -moz-linear-gradient(top,  #258dc8 0%, #258dc8 100%) !important; /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#258dc8), color-stop(100%,#258dc8)) !important; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #258dc8 0%,#258dc8 100%)!important; /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #258dc8 0%,#258dc8 100%)!important; /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #258dc8 0%,#258dc8 100%)!important; /* IE10+ */
+    background: linear-gradient(to bottom,  #258dc8 0%,#258dc8 100%)!important; /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#258dc8',GradientType=0 )!important; /* IE6-9 */
+    
+}
+#btnFilterPlans{
+background: #258dc8 !important; /* Old browsers */
+    background: -moz-linear-gradient(top,  #258dc8 0%, #258dc8 100%) !important; /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#258dc8), color-stop(100%,#258dc8)) !important; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #258dc8 0%,#258dc8 100%)!important; /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #258dc8 0%,#258dc8 100%)!important; /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #258dc8 0%,#258dc8 100%)!important; /* IE10+ */
+    background: linear-gradient(to bottom,  #258dc8 0%,#258dc8 100%)!important; /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#258dc8',GradientType=0 )!important; /* IE6-9 */
+  
+}
 .PlanListForm .PlanItemMenu .submit * {
   font-size: 80%;
   padding: 5px;
   text-shadow: none;
   width: 100px;
   cursor: pointer;
+   
 }
 
 #PlanListByZip {
@@ -186,7 +216,8 @@
 }
 
 #FilterPlansOptions .title {
-  color: #1790d7
+  color: #1790d7;
+    font-weight: bold;
 }
 
 .FilterForm {

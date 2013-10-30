@@ -23,7 +23,7 @@ body {
 
 .clear { clear:both; }
 
-h1, h2, h3 { color:#EF9E17; margin:0px; margin-bottom:5px;  /* #1292d3*/}
+h1, h2, h3 { color:#1292D3; margin:0px; margin-bottom:5px;  /* #1292d3*/}
 
 a { text-decoration:none; color:#1292D3; }
 
@@ -107,8 +107,7 @@ a { text-decoration:none; color:#1292D3; }
 	box-shadow:2px 2px 9px #999;
 	border-radius:10px;
 	background-color:#FFFFFF;
-	margin:0 auto;
-	margin-bottom:20px;
+	margin: 10 auto 20px auto;
 }
 
 #container .two_col { }
