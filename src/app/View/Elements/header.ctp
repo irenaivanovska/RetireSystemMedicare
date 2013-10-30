@@ -7,6 +7,10 @@
     echo $this->Html->css('/js/jquery-ui/themes/base/jquery-ui.css');
 
     $javascript_options = array();
+    
+    echo '<script type="text/javascript">';
+    	echo 'var AcePath = "'. $this->Html->toUrl('', '', '') . '";';
+    echo '</script>';
 
     echo $this->Html->script('/js/jquery.js', $javascript_options);
     echo $this->Html->script('/js/jquery-ui/ui/jquery-ui.js', $javascript_options);
