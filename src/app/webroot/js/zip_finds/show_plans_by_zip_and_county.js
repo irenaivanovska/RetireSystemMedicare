@@ -21,7 +21,7 @@ Ace.PlanList = {
     filter: null
   },
   addToFavorites: function(aPlanID) {
-    $.get("/zip_finds/addToFavorites/" + aPlanID, function(aData) {
+    $.get(AcePath + "zip_finds/addToFavorites/" + aPlanID, function(aData) {
       $("#AceDialogContent").html(aData);
       Ace.PlanList.Dialogs.info.dialog("open");
     });

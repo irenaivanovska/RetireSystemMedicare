@@ -36,7 +36,7 @@ class AppHelper extends Helper {
     if (DS == '\\') {
       $filename = str_replace('\\', '/', $filename);
     }
-    return $this->assetUrl($filename, array('pathPrefix' => $pathPrefix, 'ext' => $ext, 'fullBase' => false));
+    return $this->assetUrl($filename, array('pathPrefix' => $pathPrefix, 'ext' => $ext, 'fullBase' => true));
   }
 
   public function toUrlCSS($filename) {
