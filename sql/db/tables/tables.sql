@@ -1,8 +1,10 @@
+source lang.sql;
 source pharmacy_type.sql;
 source drugs.sql;
-source plan_types.sql;
-source carriers.sql;
+source geography.sql;
+source orgs.sql;
 source plans.sql;
+source plan_locations.sql;
 
 	
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -400,23 +402,6 @@ CREATE TABLE `vwcostbenefitreportstructure` (
   `SectionHeadingSortOrder` bigint(4) NOT NULL,
   PRIMARY KEY (`costbenefitreportstructure_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table vwgeography
-# ------------------------------------------------------------
-
-CREATE TABLE `vwgeography` (
-  `geography_id` int(11) NOT NULL AUTO_INCREMENT,
-  `StateCode` varchar(3) DEFAULT NULL,
-  `StateName` varchar(50) NOT NULL,
-  `CountyName` varchar(50) NOT NULL,
-  `CountyFIPSCode` bigint(4) NOT NULL,
-  `zip_code` varchar(5) DEFAULT NULL,
-  PRIMARY KEY (`geography_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
 
 # Dump of table vwlocalcontractserviceareas
 # ------------------------------------------------------------

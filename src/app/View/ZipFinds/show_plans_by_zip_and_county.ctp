@@ -22,16 +22,16 @@ echo '<div id="PlanListByZip">';
 			
 			$na_rating = (int)$plan['na_rating'];
 			$title = '<div class="stars">';
-			for($index=0; $index < 5; $index++) {
-				$title .= '<div></div>';	
+			for($index=1; $index <= 5; $index++) {
+				$title .= '<div class="' . (($index <= $na_rating) ? 'rated' : 'unrated') . '"></div>';	
 			}
 			$title .= '</div>';
-			echo $this->Ace->create('ZipFinds', $plan['name'], array('action' => 'commandAction', 'class' => 'PlanListForm', 'title_tags' => $title));
+			echo $this->Ace->create('ZipFinds', $plan['description'], array('action' => 'commandAction', 'class' => 'PlanListForm', 'title_tags' => $title));
 				echo '<div class="PlanFindItem">';
 					echo '<div><b>Offered by:</b> ' . $plan['name'] . '</div>';
 					echo '<div><b>Coverage included:</b></div>';
-					echo '<div><b>Montly premium:</b>   <span class="float_right">Health Deductable:</span></div>';
-                    echo '<div><span class="float_right">Drug Deductable:</span></div>';
+					echo '<div><b>Montly premium:</b>' . $plan['montly_premium']. '<span class="float_right">Health Deductable: ' . $plan['health_deductable'] . '</span></div>';
+                    echo '<div><span class="float_right">Drug Deductable: ' . $plan['drug_deductable'] . '</span></div>';
 				echo '</div>';
 				echo '<div class="PlanItemMenu">';
 					echo $this->Form->submit('Contact', array('type' => 'submit', 'class' => 'prettyButton', 'value' => 'contactPlan'));

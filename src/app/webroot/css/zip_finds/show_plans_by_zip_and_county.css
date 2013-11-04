@@ -89,15 +89,22 @@
   width: auto;
 }
 
-.PlanListForm .title .stars div {
-  background: url("/img/stars.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+.PlanListForm .title .stars div.rated, .PlanListForm .title .stars div.unrated {
   clear: none;
   float: left;
   height: 24px;
   margin: 0;
   padding: 0;
   width: 24px;
+  content: "";
 }
+.PlanListForm .title .stars div.rated {
+  background: url("/img/stars.png") repeat scroll 0 0 rgba(0, 0, 0, 0);  
+}
+.PlanListForm .title .stars div.unrated {
+  background: url("/img/stars.png") repeat scroll 24px 0 rgba(0, 0, 0, 0);
+}
+
 
 .PlanListForm .content {
   text-align: left;

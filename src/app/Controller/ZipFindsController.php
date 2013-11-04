@@ -87,7 +87,9 @@ class ZipFindsController extends AppController{
 
     $rows_per_page = 10;
     $options = array(
-        'fields' => array('ZipFind.plan_id', 'ZipFind.county_name','ZipFind.zip','ZipFind.zip_code','ZipFind.county_name', 'ZipFind.state_name', 'ZipFind.name', 'ZipFind.web_addr', 'ZipFind.textcond', 'ZipFind.description', 'ZipFind.na_rating'),
+        'fields' => array('ZipFind.plan_id', 'ZipFind.county_name','ZipFind.zip','ZipFind.zip_code','ZipFind.county_name', 'ZipFind.state_name', 
+                          'ZipFind.name', 'ZipFind.web_addr', 'ZipFind.textcond', 'ZipFind.description', 'ZipFind.na_rating',
+                          'ZipFind.montly_premium', 'ZipFind.health_deductable', 'ZipFind.drug_deductable'),
     );
     if (count($filter) > 0) {
       $options['conditions'] = $filter;
